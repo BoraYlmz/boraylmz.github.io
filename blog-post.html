@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Markdown Viewer</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- marked.js kütüphanesini dahil et -->
+</head>
+<body>
+    <h1>Markdown İçeriği</h1>
+    <div id="content"></div> <!-- Markdown içeriğinin gösterileceği yer -->
+
+    <script>
+        // GitHub API'si ile Markdown dosyasını çekme
+        const apiUrl = "https://api.github.com/repos/BoraYlmz/boraylmz.github.io/contents/posts/deneme.md";
+
+        fetch(apiUrl)
+            .then(response => response.json())  // JSON formatında yanıt al
+            .then(data => {
+                // GitHub API'si Base64 kodlaması yapar, bunu çözüyoruz
+                const encodedContent = data.content;
+                const decodedContent = atob(encodedContent);  // Base64 kodlamayı çöz
+
+                // Markdown içeriğini HTML'ye dönüştür
+                const htmlContent = marked(decodedContent); // marked.js ile dönüştür
+
+                // HTML içeriğini sayfada göster
+                document.getElementById('content').innerHTML = htmlContent;
+            })
+            .catch(error => console.error("Hata oluştu:", error)); // Hata yönetimi
+    </script>
+</body>
+</html>
