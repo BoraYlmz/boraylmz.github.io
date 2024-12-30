@@ -1,5 +1,5 @@
 ---
-Başlık: "Başlık Buraya"
+Başlık: "Deneme 1"
 Özet: "Bu yazının kısa özeti"
 Yazım Tarihi: "2024-12-30"
 ---
