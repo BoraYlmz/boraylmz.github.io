@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bora Yılmaz</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <style>
+    #fixed-header {
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      color: white;
+      font-weight: bold;
+      font-family: Arial, Helvetica, sans-serif;
+      z-index: 10; 
+    }
+    .box {
+      height: 100px;
+      background-color: #484e53;
+      color: white;
+      margin: 10px 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body class="d-flex bg-dark" style="height: 100vh; margin: 0;">
+    <div class="col-3 bg-dark"></div>
+    <div class="col-6"  >
+        <div id="fixed-header" class="bg-dark">
+            <div class="d-flex justify-content-between">
+                <div style="font-size: 22px;">BORA YILMAZ</div>
+                <div style="font-size: 18px;">Projects & Important Subjects</div>
+            </div>
+        </div>
+        <div class="scroll-container">
+            <!-- İçerik kutuları -->
+            <div class="box">Kutular 1</div>
+            <div class="box">Kutular 2</div>
+            <div class="box">Kutular 3</div>
+            <div class="box">Kutular 4</div>
+            <div class="box">Kutular 5</div>
+            <div class="box">Kutular 6</div>
+            <div class="box">Kutular 7</div>
+            <div class="box">Kutular 8</div>
+            <div class="box">Kutular 9</div>
+            <div class="box">Kutular 10</div>
+            <!-- İhtiyaç duydukça daha fazla kutu eklenebilir -->
+          </div>
+        
+        
+        
+    </div>
+    <div class="col-3 bg-dark "></div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
