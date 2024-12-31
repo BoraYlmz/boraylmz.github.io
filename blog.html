@@ -11,20 +11,24 @@
     #fixed-header {
       padding: 10px;
       border-bottom: 1px solid #ddd;
+      border-right: 1px solid #4d5154;
+      border-left: 1px solid #4d5154;
       position: sticky;
       top: 0;
       color: white;
       font-weight: bold;
       font-family: Arial, Helvetica, sans-serif;
       z-index: 10; 
+      
     }
     .box {
       height: 100px;
-      background-color: #484e53;
-      border: 1px solid  #484e53;
+      background-color: #373b3e;
+      border: 1px solid  #4d5154;
       border-radius: 10px;
       color: white;
       margin: 10px 15px;
+      margin-top:0 ;
       padding-left: 25px;
       padding-right: 25px;
       position: relative;
@@ -52,14 +56,14 @@
 </head>
 <body class="d-flex bg-dark" style="height: 100vh; margin: 0;">
     <div class="col-0 col-md-3 bg-dark" style="padding: 0;margin: 0;"></div>
-    <div class="col-12 col-md-6"  >
-        <div id="fixed-header" class="bg-dark">
+    <div class="col-12 col-md-6" style="padding: 0; margin: 0;" >
+        <div id="fixed-header" style="background-color: #212529;">
             <div class="d-flex justify-content-between">
                 <div style="font-size: 22px;">BORA YILMAZ</div>
                 <div style="font-size: 18px;">Projects & Important Subjects</div>
             </div>
         </div>
-        <div id="posts-container">
+        <div id="posts-container" style="background-color: #212529;border-width: 0 1px; border-style: solid; border-color: #4d5154;top: 0;padding-top:10px ;min-height: 100vh;">
             <!-- İçerik kutuları -->
         </div>
     </div>
@@ -115,7 +119,10 @@
                                                         <div class="container date-area">${date}</div>
                                                     </div>
                                                 </a>`;
-                                                posts_container.innerHTML += post;
+                                    
+                                    posts_container.innerHTML += post;
+                                    
+                                                
                                 } else {
                                     console.error('YAML front matter bulunamadı');
                                 }
