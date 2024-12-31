@@ -9,8 +9,8 @@ Yazım Tarihi: "28.11.2024"
 
 <hr>
 
-### [Türkçe](#turkce)
-### [English](#english)
+#### [Türkçe](#turkce)
+#### [English](#english)
 
 <hr>
 
