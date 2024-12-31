@@ -65,70 +65,80 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-       const apiUrl = 'https://api.github.com/repos/BoraYlmz/boraylmz.github.io/contents/posts'; // GitHub API URL
-       fetch(apiUrl)
-        .then(response => {
-            if (!response.ok) {  // HTTP 2xx dışı bir yanıt kodu alırsak
-                throw new Error('GitHub API yanıtı başarısız: ' + response.status);
-            }
-            return response.json();  // Eğer başarılıysa JSON verisini döndür
-        })
-        .then(files => {
-            const mdFiles = files.filter(file => file.name.endsWith('.md'));
-            let posts_container =  $('#posts-container');
-            console.log(files)
-            posts_container.empty()
-            mdFiles.forEach(file => {
-                fetch(file.download_url)
-                    .then(response => {
-                        if (!response.ok) {  // Yine yanıtın başarılı olup olmadığını kontrol et
-                            throw new Error('Markdown dosyası alınamadı: ' + response.status);
-                        }
-                        return response.text();  // Başarıyla alınırsa metin olarak döndür
-                    })
-                    .then(mdContent =>  {
-                        
-                        // YAML Front Matter'dan bilgileri çıkarmak için regex kullanıyoruz
-                        const yamlRegex = /---\s*([\s\S]*?)\s*---/; // '---' arasında bulunan her şeyi yakalar
-                        const match = mdContent.match(yamlRegex);
-                        
-                        if (match) {
-                            const yamlContent = match[1].trim();  // '---' arasındaki veriyi alıyoruz
-                            // YAML içeriğinden başlık, özet ve yazım tarihini çıkaralım
-                            const titleRegex = /Başlık:\s*"([^"]+)"/;
-                            const summaryRegex = /Özet:\s*"([^"]+)"/;
-                            const dateRegex = /Yazım Tarihi:\s*"([^"]+)"/;
+       
+       <script>
+        // DOMContentLoaded olayı ile DOM yüklendikten sonra çalışması sağlanır.
+        document.addEventListener('DOMContentLoaded', function () {
+            const apiUrl = 'https://api.github.com/repos/BoraYlmz/boraylmz.github.io/contents/posts'; // GitHub API URL
 
-                            const titleMatch = yamlContent.match(titleRegex);
-                            const summaryMatch = yamlContent.match(summaryRegex);
-                            const dateMatch = yamlContent.match(dateRegex);
-                            // Başlık, özet ve tarih bilgilerini çekiyoruz
-                            const title = titleMatch ? titleMatch[1] : 'Başlık bulunamadı';
-                            const summary = summaryMatch ? summaryMatch[1] : 'Özet bulunamadı';
-                            const date = dateMatch ? dateMatch[1] : 'Tarih bulunamadı';
-                            // Başlıkları ekrana yazdıralım
+            fetch(apiUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('GitHub API yanıtı başarısız: ' + response.status);
+                    }
+                    return response.json();
+                })
+                .then(files => {
+                    const mdFiles = files.filter(file => file.name.endsWith('.md'));
+                    let posts_container = document.getElementById('posts-container');
+                    posts_container.innerHTML = '';  // Container'ı temizle
+                    mdFiles.forEach(file => {
+                        fetch(file.download_url)
+                            .then(response => {
+                                if (!response.ok) {
+                                    throw new Error('Markdown dosyası alınamadı: ' + response.status);
+                                }
+                                return response.text();
+                            })
+                            .then(mdContent => {
+                                const yamlRegex = /---\s*([\s\S]*?)\s*---/;
+                                const match = mdContent.match(yamlRegex);
+                                if (match) {
+                                    const yamlContent = match[1].trim();
+                                    const titleRegex = /Başlık:\s*"([^"]+)"/;
+                                    const summaryRegex = /Özet:\s*"([^"]+)"/;
+                                    const dateRegex = /Yazım Tarihi:\s*"([^"]+)"/;
 
-                            const post = `<a href='blog-post.html'>
-                                                <div class='box'>
-                                                    <div class='row'><h5>${title}</h5></div>
-                                                    <div class='row text-area'>${summary}</div>
-                                                    <div class='container date-area'>${date}</div>
-                                                </div>
-                                            </a>`;
-                            
-                            posts_container.append(post);
-                        } else {
-                            console.error('YAML front matter bulunamadı');
-                        }
-                    })
-                    .catch(error => {
-                        console.error('Markdown dosyası okunamadı:', error);
+                                    const titleMatch = yamlContent.match(titleRegex);
+                                    const summaryMatch = yamlContent.match(summaryRegex);
+                                    const dateMatch = yamlContent.match(dateRegex);
+
+                                    const title = titleMatch ? titleMatch[1] : 'Başlık bulunamadı';
+                                    const summary = summaryMatch ? summaryMatch[1] : 'Özet bulunamadı';
+                                    const date = dateMatch ? dateMatch[1] : 'Tarih bulunamadı';
+                                    // 
+                                    const post = `<a href="blog-post.html" class="post-card" data-content="${file.name}">
+                                                    <div class="box">
+                                                        <div class="row"><h5>${title}</h5></div>
+                                                        <div class="row text-area">${summary}</div>
+                                                        <div class="container date-area">${date}</div>
+                                                    </div>
+                                                </a>`;
+
+                                    posts_container.innerHTML += post;
+                                } else {
+                                    console.error('YAML front matter bulunamadı');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Markdown dosyası okunamadı:', error);
+                            });
                     });
-            });
-        })
-        .catch(error => {
-            console.error('GitHub API hatası:', error);
+
+                    // Kartlara tıklama olayını ekliyoruz (Event Delegation)
+                    posts_container.addEventListener('click', function (event) {
+                        const card = event.target.closest('.post-card');
+                        if (card) {
+                            const mdContent = card.getAttribute('data-content');
+                            console.log(mdContent)
+                            // Markdown içeriğini localStorage'a kaydediyoruz
+                            localStorage.setItem('mdContent', mdContent);
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error('GitHub API hatası:', error);
+                });
         });
     </script>
 </body>

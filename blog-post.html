@@ -5,29 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GitHub Markdown Viewer</title>
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script> <!-- marked.js kütüphanesini dahil et -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-<body>
-    <h1>Markdown İçeriği</h1>
-    <div id="content"></div> <!-- Markdown içeriğinin gösterileceği yer -->
-
+<body class="d-flex bg-dark" style="height: 100vh; margin: 0;">
+    <div class="col-3 bg-dark"></div>
+    <div class="col-6"  >
+        <div id="posts-container" style="color: white;" >
+        </div>
+    </div>
+    <div class="col-3 bg-dark "></div>
+    <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <script>
-        // GitHub API'si ile Markdown dosyasını çekme
-        const apiUrl = "https://api.github.com/repos/BoraYlmz/boraylmz.github.io/contents/posts/deneme.md";
+        // localStorage'dan Markdown içeriğini alıyoruz
+        const mdFile = localStorage.getItem('mdContent');
+        if (mdFile) {
+            const apiUrlPart = 'https://api.github.com/repos/BoraYlmz/boraylmz.github.io/contents/posts/';
+            const apiUrl = apiUrlPart.concat(mdFile)
+            console.log(apiUrl)
+            fetch(apiUrl)
+                .then(response =>
+                {
+                    if(!response.ok)
+                    {
+                        throw new Error('Github API yanıtı başarısız:'+ response.status);
+                    }
+                    return response.json();
+                })
+                .then(file =>
+                {
+                    fetch(file.download_url)
+                        .then(response =>
+                        {
+                            if(!response.ok)
+                            {
+                                throw new Error('Markdown dosyası alınamadı: ' + response.status);
+                            }
+                            return response.text();
+                        })
+                        .then(mdContent =>
+                        {
+                            const yamlRegex = /---\s*([\s\S]*?)\s*---/;
+                            const match = mdContent.match(yamlRegex);
+                            let content = mdContent.replace(match[0],"")
+                            console.log(content)
+                            var converter = new showdown.Converter();
+                            document.getElementById('posts-container').innerHTML = converter.makeHtml(content);;
+                        })
+                })
 
-        fetch(apiUrl)
-            .then(response => response.json())  // JSON formatında yanıt al
-            .then(data => {
-                // GitHub API'si Base64 kodlaması yapar, bunu çözüyoruz
-                const encodedContent = data.content;
-                const decodedContent = atob(encodedContent);  // Base64 kodlamayı çöz
-
-                // Markdown içeriğini HTML'ye dönüştür
-                const htmlContent = marked(decodedContent); // marked.js ile dönüştür
-
-                // HTML içeriğini sayfada göster
-                document.getElementById('content').innerHTML = htmlContent;
-            })
-            .catch(error => console.error("Hata oluştu:", error)); // Hata yönetimi
+            // Markdown içeriğini HTML'ye dönüştür
+           
+        } else {
+            document.getElementById('posts-container').innerHTML = '<p>Markdown içeriği bulunamadı.</p>';
+        }
     </script>
 </body>
 </html>
