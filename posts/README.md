@@ -19,7 +19,7 @@ Bu proje, günlük iş akışlarındaki kısa süreli (yaklaşık 15-30 dakika) 
 Bu modül, kullanıcıların görevlerini **"Başlamamış"**, **"İşlemde"** ve **"Bitti"** olmak üzere üç farklı sütunda listeleyebilmelerini sağlar. Her bir görev, detaylı açıklamalar ve eklenebilir yorumlar içermektedir. Modül, mevcut görevlerin durumunu takip etmeyi amaçlayan bir görev atama aracıdır.
 
 ## Proje Ekran Görüntüleri:
-<div style="display: flex; justify-content: space-between; gap: 10px;">
+<div class="img-container" style="display: flex; justify-content: space-between; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/51352d6d-e1ec-48df-9dde-5aea06eccf5e" alt="login_panel" style="width: 200px;" />
   <img src="https://github.com/user-attachments/assets/a558194a-4931-472c-91a1-8cd298c5183b" alt="mail_panel" style="width: 200px;" />
   <img src="https://github.com/user-attachments/assets/4921feb9-64f2-4f2b-b5ee-c813171d61cd" alt="mail_detail" style="width: 200px;" />
@@ -62,7 +62,7 @@ This project is my first Tkinter-based GUI application developed during short fr
 This module allows users to list their tasks in three different columns: **"Not Started"**, **"In Progress"**, and **"Completed"**. Each task includes detailed descriptions and the ability to add comments. The module is a task assignment tool designed to track the current status of tasks.
 
 ## Project Screenshots:
-<div style="display: flex; justify-content: space-between; gap: 10px;">
+<div class="img-container" style="display: flex; justify-content: space-between; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/51352d6d-e1ec-48df-9dde-5aea06eccf5e" alt="login_panel" style="width: 200px;" />
   <img src="https://github.com/user-attachments/assets/a558194a-4931-472c-91a1-8cd298c5183b" alt="mail_panel" style="width: 200px;" />
   <img src="https://github.com/user-attachments/assets/4921feb9-64f2-4f2b-b5ee-c813171d61cd" alt="mail_detail" style="width: 200px;" />
