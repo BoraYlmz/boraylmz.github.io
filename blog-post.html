@@ -8,14 +8,41 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .img-container 
+        {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .img-container img 
+        {
+            max-width: 100%;
+            height: auto;
+            flex: 1 1 100px;
+        }
+        #posts-container *
+        {
+            position: relative;
+        }  
+        #posts-container 
+        {
+            color: white;
+            word-wrap: break-word; 
+            border-width: 0 1px;
+            border-color: #484e53;
+            border-style: solid; 
+            padding: 10px;
+        }  
+    </style>
 </head>
 <body class="d-flex bg-dark" style="height: 100vh; margin: 0;">
-    <div class="col-3 bg-dark"></div>
-    <div class="col-6"  >
-        <div id="posts-container" style="color: white;" >
+    <div class="col-0 col-md-3" style="padding: 0;margin: 0;" ></div>
+    <div class="col-12 col-md-6"  >
+        <div id="posts-container">
         </div>
     </div>
-    <div class="col-3 bg-dark "></div>
+    <div class="col-0 col-md-3" style="padding: 0;margin: 0;"></div>
     <script type="text/javascript" src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <script>
         // localStorage'dan Markdown içeriğini alıyoruz
@@ -53,10 +80,7 @@
                             var converter = new showdown.Converter();
                             document.getElementById('posts-container').innerHTML = converter.makeHtml(content);;
                         })
-                })
-
-            // Markdown içeriğini HTML'ye dönüştür
-           
+                })    
         } else {
             document.getElementById('posts-container').innerHTML = '<p>Markdown içeriği bulunamadı.</p>';
         }
