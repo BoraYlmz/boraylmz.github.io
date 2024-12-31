@@ -7,6 +7,8 @@ Yazım Tarihi: "28.11.2024"
 
 # [To-Do Uygulama Projesi / To-Do Application Project](https://github.com/BoraYlmz/to_do)
 
+---
+
 ### [Türkçe](#turkce)
 ### [English](#english)
 
