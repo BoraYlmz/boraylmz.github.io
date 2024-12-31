@@ -15,13 +15,17 @@ Yazım Tarihi: "28.11.2024"
 <hr>
 
 ## Türkçe / Turkish <a name="turkce"></a>
+
 <hr>
+
 Bu proje, günlük iş akışlarındaki kısa süreli (yaklaşık 15-30 dakika) boş zamanlarda geliştirdiğim ilk Tkinter tabanlı arayüz projesidir. Projenin başlangıç fikri, mevcut çalışma ortamımızda kullandığımız farklı uygulamaları tek bir platformda birleştirmenin nasıl bir deneyim yaratabileceği ve bu sürecin neler gerektireceği üzerine şekillenmiştir. Bu proje, söz konusu fikrin ilk modülünü oluşturmaktadır.
 
 Bu modül, kullanıcıların görevlerini **"Başlamamış"**, **"İşlemde"** ve **"Bitti"** olmak üzere üç farklı sütunda listeleyebilmelerini sağlar. Her bir görev, detaylı açıklamalar ve eklenebilir yorumlar içermektedir. Modül, mevcut görevlerin durumunu takip etmeyi amaçlayan bir görev atama aracıdır.
 
 ## Proje Ekran Görüntüleri:
+
 <hr>
+
 <div class="img-container" style="display: flex; justify-content: space-between; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/51352d6d-e1ec-48df-9dde-5aea06eccf5e" alt="login_panel" style="width: 200px;" />
   <img src="https://github.com/user-attachments/assets/a558194a-4931-472c-91a1-8cd298c5183b" alt="mail_panel" style="width: 200px;" />
@@ -31,13 +35,19 @@ Bu modül, kullanıcıların görevlerini **"Başlamamış"**, **"İşlemde"** v
 </div>
 
 ## Eksik Yönler ve Gelecek Geliştirme Fikirleri:
+
 <hr>
+
 ### **Proje Durumu:**
+
 <hr>
+
 Bu proje, planlanan işlevlerin bazıları tamamlanmamış ve yarım kalmış bir projedir. Ancak, mevcut haliyle kullanım için uygundur. Geliştirilecek bazı özellikler aşağıda belirtilmiştir.
 
 ### **Eksiklikler ve Geliştirme Alanları:**
+
 <hr>
+
 1. **Kullanıcı Kayıt Modülü Eksikliği / Missing User Registration Module:**
    Proje, kullanıcı kaydı modülüne sahip değildir. İki farklı fikir arasında kalınmış ve her iki seçenek de henüz uygulanmamıştır:
    - Manuel kullanıcı girişi ile tanımlama (yetki verilmemişlerin sisteme girişi engelleme).
@@ -61,13 +71,17 @@ Güncellemeler, çeşitli sebeplerden ötürü durdurulmuş olup, modül henüz 
 <hr>
 
 ## English / İngilizce <a name="english"></a>
+
 <hr>
+
 This project is my first Tkinter-based GUI application developed during short free periods (approximately 15-30 minutes) in my daily workflow. The initial idea behind the project was to combine the various applications used in our work environment into a single platform and explore what this experience would be like, as well as what it would require. This project represents the first module of that idea.
 
 This module allows users to list their tasks in three different columns: **"Not Started"**, **"In Progress"**, and **"Completed"**. Each task includes detailed descriptions and the ability to add comments. The module is a task assignment tool designed to track the current status of tasks.
 
 ## Project Screenshots:
+
 <hr>
+
 <div class="img-container" style="display: flex; justify-content: space-between; gap: 10px;">
   <img src="https://github.com/user-attachments/assets/51352d6d-e1ec-48df-9dde-5aea06eccf5e" alt="login_panel" style="width: 200px;" />
   <img src="https://github.com/user-attachments/assets/a558194a-4931-472c-91a1-8cd298c5183b" alt="mail_panel" style="width: 200px;" />
@@ -77,13 +91,19 @@ This module allows users to list their tasks in three different columns: **"Not 
 </div>
 
 ## Missing Features and Future Development Ideas:
+
 <hr>
+
 ### **Project Status:**
+
 <hr>
+
 This project is incomplete, and some planned features are not yet implemented. However, it is functional and ready for use. The following features are still in development.
 
 ### **Missing Features and Areas for Development:**
+
 <hr>
+
 1. **Missing User Registration Module:**
    The project lacks a user registration module. Two options have been considered but not yet implemented:
    - Manual user login and assignment (restrict access for unauthorized users).
