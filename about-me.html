@@ -30,28 +30,66 @@
     a:hover{
       color: gray;
     }
+    @media (min-width: 0px) {  
+        h2 {font-size:1.5rem;} /*1rem = 16px*/
+        .sf{font-size: 0.5rem;}
+        h5 {font-size:0.75rem;}
+        .mf{font-size: 0.6rem;text-align: justify;}
+        h6{font-size: 0.6rem;}
+        .hd{font-size: 0.55rem;float: right;}
+
+      }
+       
+      /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+      @media (min-width: 768px) {  
+        h2 {font-size:2rem;} /*1rem = 16px*/
+        .sf{font-size: 0.6rem;}
+        h5 {font-size:1rem;}
+        .mf{font-size: 0.7rem;text-align: justify;}
+        h6{font-size: 0.7rem;}
+        .hd{font-size: 0.7rem;float: right;}
+      }
+       
+      /* Large devices (desktops, 992px and up) */
+      @media (min-width: 992px) { 
+        h2 {font-size:2.5rem;} /*1rem = 16px*/
+        .sf{font-size: 0.7rem;}
+        h5 {font-size:1.25rem;}
+        .mf{font-size: 0.75rem;text-align: justify;}
+        h6{font-size: 0.85rem;}
+        .hd{font-size: 0.75rem;float: right;}
+      }
+       
+      /* Extra large devices (large desktops, 1200px and up) */
+      @media (min-width: 1200px) {  
+        h2 {font-size:3rem;} /*1rem = 16px*/  
+        .sf{font-size: 0.7rem;}
+        h5 {font-size:1.5rem;}
+        .mf{font-size: 0.8rem;text-align: justify;}
+        h6{font-size: 1rem;}
+        .hd{font-size: 0.8rem;float: right;}
+      }
   </style>
 </head>
-<body class="d-flex bg-dark" style="height: 100vh; margin: 0;">
+<body class="d-flex bg-dark" style="height: 100vh; margin: 0; font-family: 'Open Sans', Arial, sans-serif;">
   <div class="col-0 col-md-3" style="padding: 0;margin: 0;"></div>
   <div class="col-12 col-md-6" >
     <div class="row h-100">
-        <div class="col-1 bg-light"></div>
-        <div class="col-7 bg-light " style="color: #1b334a;">
-            <span class="row mt-5" style="font-weight: bold;"> <h2>BORA YILMAZ</h2></span>
+        <div class="col-8 bg-light pl-5 pr-4" style="color: #1b334a;">
+            <span class="row mt-3 mt-md-5"><h2>BORA YILMAZ</h2></span>
             <span class="row align-items-center">
                 <i class="fa-solid fa-phone fa-xs pr-1"></i>
-                <span style="font-weight: 500; font-family: Helvetica; font-size:x-small;">+90 (543) 645 12 26</span>
+                <span class="sf">+90 (543) 645 12 26</span>
                 <i class="fa-solid fa-at fa-xs pr-1 pl-2"></i>
-                <span style="font-weight: 500; font-family: Helvetica; font-size:x-small;">by.2001@outlook.com</span>
+                <span class="sf">by.2001@outlook.com</span>
             </span>
             <span class="row align-items-center pt-1">
                 <i class="fa-solid fa-location-pin fa-xs pr-1"></i>
-                <span style="font-weight: 500; font-family: Helvetica; font-size:x-small;">Türkiye, İstanbul, Kartal</span>
+                <span class="sf">Türkiye, İstanbul, Kartal</span>
             </span>
-            <span class="row mt-4 mb-0" style="font-weight: bold;"><h5>HAKKIMDA</h5></span>
+            <span class="row mt-4 mb-0"><h5>HAKKIMDA</h5></span>
             <hr class="mt-0 ml-0 pl-0 mb-2">
-            <span class="row pr-2" style="font-size: small;">
+            <span class="row pr-2 mf">
                 Bilgisayar programlama mezunu, azimli ve tutkulu bir yazılım geliştiricisiyim. Kendimi
                 sürekli geliştirmeyi seven ve yeniliklere açık biriyim. Web teknolojileri alanında
                 HTML, CSS, PHP ve JavaScript gibi dillerde bilgi sahibiyim. Ancak, ağırlıklı olarak
@@ -61,22 +99,22 @@
                 becerilerimi ve problem çözme yeteneklerimi kullanarak verimli yazılım çözümleri
                 üretmeye devam ediyorum.
             </span>
-            <span class="row mt-3 mb-0" style="font-weight: bold;"><h5>DENEYİMLER</h5></span>
+            <span class="row mt-3 mb-0"><h5>DENEYİMLER</h5></span>
             <hr class="mt-0 ml-0 pl-0 mb-2">
-            <span class="row mt-2 mb-0 pr-0" style="font-size: small;">
-                <span class="col-9">
+            <span class="row mt-2 mb-0 pr-0">
+                <span class="col-7 col-md-8">
                     <span class="row"><h6>SİSTEM DESTEK UZMANI</h6></span>
-                    <span class="row mt-n2" style="color: #058eff;">okulsepeti.com.tr</span>
+                    <span class="row mt-n1" style="color: #058eff;"><h6>okulsepeti.com.tr</h6></span>
                 </span>
-                <span class="col-3">
-                    <span class="row">04/2023 - Devam</span>
-                    <span class="row">İstanbul (Asya)</span>
+                <span class="col-5 col-md-4">
+                    <span class="row pr-2 hd">04/2023 - Devam</span>
+                    <span class="row pr-2 hd">İstanbul (Asya)</span>
                 </span>          
             </span>
-            <span class="row mt-2 mb-0 pr-0" style="font-size: small;">
+            <span class="row mt-2 mb-0 pr-0">
                 <span class="col-12">
-                    Bilişim Sektörü
-                    <ul class="ml-0 pl-0 pt-1">
+                    <span class="mf">Bilişim Sektörü</span>
+                    <ul class="ml-0 pl-0 pt-1 mf">
                         <li>
                             Mayıs ile Kasım ayları arasında özel okulların satış sitelerini tasarlayıp
                             geliştiriyorum. Bu süreçte, okulların çevrimiçi varlıklarını güçlendirmek ve
@@ -94,21 +132,21 @@
                     </ul>
                 </span>          
             </span>
-
-            <span class="row mt-2 mb-0 pr-0" style="font-size: small;">
-                <span class="col-9">
+            <span class="row mt-2 mb-0 pr-0">
+                <span class="col-7 col-md-8">
                     <span class="row"><h6>STAJ</h6></span>
-                    <span class="row mt-n2" style="color: #058eff;">Karsan Otomotiv</span>
+                    <span class="row mt-n1" style="color: #058eff;"><h6>Karsan Otomotiv</h6></span>
                 </span>
-                <span class="col-3">
-                    <span class="row">06/2018 - 08/2018</span>
-                    <span class="row">İstanbul (Asya)</span>
+                <span class="col-5 col-md-4">
+                    <span class="row pr-2 hd">06/2018 - 08/2018</span>
+                    <span class="row pr-2 hd">İstanbul (Asya)</span>
                 </span>          
             </span>
-            <span class="row mt-2 mb-0 pr-0" style="font-size: small;">
+            <span class="row mt-2 mb-0 pr-0">
                 <span class="col-12">
-                    Otomotiv Sektörü
-                    <ul class="ml-0 pl-0 pt-1">
+                    <span class="mf">Otomotiv Sektörü</span>
+                    
+                    <ul class="ml-0 pl-0 pt-1 mf">
                         <li>
                             Otomotiv sektöründe web yazılımı departmanında stajyer olarak, web sitelerinin
                             geliştirilmesi ve bakımını öğrendim. Web sayfalarını güncelleme, temel kodlama
@@ -118,20 +156,20 @@
                 </span>          
             </span>
 
-            <span class="row mt-2 mb-0 pr-0" style="font-size: small;">
-                <span class="col-9">
+            <span class="row mt-2 mb-0 pr-0">
+                <span class="col-7 col-md-8">
                     <span class="row"><h6>STAJ</h6></span>
-                    <span class="row mt-n2" style="color: #058eff;">Karsan Otomotiv</span>
+                    <span class="row mt-n1" style="color: #058eff;"><h6>Entes Elektronik</h6></span>
                 </span>
-                <span class="col-3">
-                    <span class="row">06/2017 - 07/2017</span>
-                    <span class="row">İstanbul (Asya)</span>
+                <span class="col-5 col-md-4">
+                    <span class="row pr-2 hd">06/2017 - 07/2017</span>
+                    <span class="row pr-2 hd">İstanbul (Asya)</span>
                 </span>          
             </span>
-            <span class="row mt-2 mb-0 pr-0" style="font-size: small;">
+            <span class="row mt-2 mb-0 pr-0">
                 <span class="col-12">
-                    Elektrik & Elektronik Sektörü
-                    <ul class="ml-0 pl-0 pt-1">
+                    <span class="mf">Elektrik & Elektronik Sektörü</span>
+                    <ul class="ml-0 pl-0 pt-1 mf">
                         <li>
                             IT departmanında stajyer olarak, sistem bakımı, yazılım desteği ve veri yönetimi
                             gibi görevlerde bulundum. Teknik ekip ile çalışarak günlük işlerin yürütülmesine
@@ -141,25 +179,25 @@
                 </span>          
             </span>
             
-            <span class="row mt-3 mb-0" style="font-weight: bold;"><h5>Eğitim</h5></span>
+            <span class="row mt-3 mb-0"><h5>EĞİTİM</h5></span>
             <hr class="mt-0 ml-0 pl-0 mb-2">
             <span class="row" style="font-size: small;">
-                <span class="col-9">
-                    <span class="row">ÖnLinans</span>
-                    <span class="row" style="color: #058eff;">İstinye Üniversitesi</span>
-                    <span class="row pt-2">Lise</span>
-                    <span class="row" style="color: #058eff;">75.Yıl D.M.O. Mesleki ve Teknik Anadolu Lisesi</span>
+                <span class="col-7 col-md-8">
+                    <span class="row"><h6>ÖnLinans</h6></span>
+                    <span class="row mt-n1" style="color: #058eff;"><h6>İstinye Üniversitesi</h6></span>
+                    <span class="row pt-2"><h6>Lise</h6></span>
+                    <span class="row mt-n1" style="color: #058eff;"><h6>75.Yıl D.M.O. Mesleki ve Teknik Anadolu Lisesi</h6></span>
                 </span>
-                <span class="col-3" >
-                    <span class="row">09/2019-07/2021</span>
-                    <span class="row ">Türkiye , İstanbul</span>
-                    <span class="row pt-2">09/2015-06/2019</span>
-                    <span class="row">Türkiye , İstanbul</span>
+                <span class="col-5 col-md-4" >
+                    <span class="row pr-2 hd">09/2019-07/2021</span>
+                    <span class="row pr-2 hd">Türkiye , İstanbul</span>
+                    <span class="row pr-2 hd pt-4">09/2015-06/2019</span>
+                    <span class="row pr-2 hd">Türkiye , İstanbul</span>
                 </span>
             </span>
             
         </div>
-        <div class="col-4" style="background-color: #22405c; color: white;">
+        <div class="col-4 m-0 p-0" style="background-color: #22405c; color: white;">
             <div class="row h-25 justify-content-center">
                 <div class="col-10">
                     <div class="square">
@@ -168,73 +206,74 @@
                         </div>
                     </div>
                     <span class="row justify-content-center pt-3" style="font-weight: bold ;" >
-                        BİLGİSAYAR BİLGİLERİ
+                        <h6>BİLGİSAYAR BİLGİLERİ</h6>
                     </span>  
                     <hr class="mt-0" style="background-color: white;">
-                    <div class="row align-items-center">
-                        <i class="fa-regular fa-star pr-2"></i>
-                        <span style="font-weight:500;">Backend Dilleri</span> 
-                        <span class="pl-4" style="font-size: small;">Python , C# , C++</span>
+                    <div class="row align-items-center pl-2">
+                        <h6><i class="fa-regular fa-star pr-2"></i></h6>
+                        <h6>Backend Dilleri</h6>
+                        <span class="pl-4 mf" >Python , C# , C++</span>
                     </div>
-                    <div class="row align-items-center pt-2">
-                        <i class="fa-regular fa-star pr-2"></i>
-                        <span style="font-weight:500;">WEB Dilleri</span> 
-                        <span class="pl-4" style="font-size: small;">HTML , CSS , PHP , JS</span>
+                    <div class="row align-items-center pt-3 pl-2">
+                        <h6><i class="fa-regular fa-star pr-2"></i></h6>
+                        <h6>WEB Dilleri</h6>
+                        <span class="pl-4 mf">HTML , CSS , PHP , JS</span>
                     </div>
-                    <div class="row align-items-center pt-2">
-                        <i class="fa-regular fa-star pr-2"></i>
-                        <span style="font-weight:500;">Ms Office</span> 
+                    <div class="row align-items-center pt-3 pl-2">
+                        <h6><i class="fa-regular fa-star pr-2"></i></h6>
+                        <h6>Ms Office</h6>
                     </div>
-
-                    <span class="row pt-4 pl-3" style="font-weight: bold ;" >
-                        DİLLER
+                    
+                    <span class="row pt-4 justify-content-center" style="font-weight: bold ;" >
+                        <h6>DİLLER</h6>
                     </span>  
                     <hr class="mt-0 mb-0" style="background-color: white;">
+
                     <div class="row align-items-center pt-2">
-                        <div class="col-8">
-                            <div class="row align-items-center">
-                                <i class="fa-regular fa-star  pr-1"></i>
-                                <span style="font-weight:500; font-family: Arial, Helvetica, sans-serif;">Türkçe </span>
+                        <div class="col-7">
+                            <div class="row align-items-center pl-2">
+                                <h6><i class="fa-regular fa-star pr-1"></i></h6>
+                                <h6>Türkçe</h6>
                             </div> 
                         </div>
-                        <div class="col-4">
+                        <div class="col-5">
                             <div class="row align-items-center">
-                                <i class="fa-solid fa-circle fa-2xs pr-1"></i>
-                                <i class="fa-solid fa-circle fa-2xs pr-1"></i>
-                                <i class="fa-solid fa-circle fa-2xs pr-1"></i>
-                                <i class="fa-solid fa-circle fa-2xs pr-1"></i>
-                                <i class="fa-solid fa-circle fa-2xs pr-1"></i>
+                                <h6><i class="fa-solid fa-circle fa-2xs pl-1"></i></h6>
+                                <h6><i class="fa-solid fa-circle fa-2xs pl-1"></i></h6>
+                                <h6><i class="fa-solid fa-circle fa-2xs pl-1"></i></h6>
+                                <h6><i class="fa-solid fa-circle fa-2xs pl-1"></i></h6>
+                                <h6><i class="fa-solid fa-circle fa-2xs pl-1"></i></h6>
                             </div>   
                         </div>
                     </div>
                     <div class="row align-items-center pt-2">
-                        <div class="col-8">
-                            <div class="row align-items-center">
-                                <i class="fa-regular fa-star  pr-1"></i>
-                                <span style="font-weight:500; font-family: Arial, Helvetica, sans-serif;">İngilizce </span>
+                        <div class="col-7">
+                            <div class="row align-items-center pl-2">
+                                <h6><i class="fa-regular fa-star pr-1"></i></h6>
+                                <h6>İngilizce</h6>
                             </div> 
                         </div>
-                        <div class="col-4">
+                        <div class="col-5">
                             <div class="row align-items-center">
-                                <i class="fa-solid fa-circle fa-2xs pr-1"></i>
-                                <i class="fa-solid fa-circle fa-2xs pr-1"></i>
-                                <i class="fa-solid fa-circle fa-2xs pr-1"></i>
-                                <i class="fa-regular fa-circle fa-2xs pr-1"></i>
-                                <i class="fa-regular fa-circle fa-2xs pr-1"></i>
+                                <h6><i class="fa-solid fa-circle fa-2xs pl-1"></i></h6>
+                                <h6><i class="fa-solid fa-circle fa-2xs pl-1"></i></h6>
+                                <h6><i class="fa-solid fa-circle fa-2xs pl-1"></i></h6>
+                                <h6><i class="fa-regular fa-circle fa-2xs pl-1"></i></h6>
+                                <h6><i class="fa-regular fa-circle fa-2xs pl-1"></i></h6>
                             </div>   
                         </div>
                     </div>
                      
-                    <span class="row pt-4 pl-3" style="font-weight: bold ;" >
-                        SOSYAL MEDYA
-                    </span>  
+                    <span class="row pt-5 justify-content-center" style="font-weight: bold ;" >
+                        <h6>SOSYAL MEDYA</h6>
+                    </span>
                     <hr class="mt-0 mb-0" style="background-color: white;">
-                    <div class="row align-items-center pt-3">
-                        <div class="col-2"><a href="index.html" target="_blank"><i class="fa-solid fa-globe fa-xl"></i></a></div>
-                        <div class="col-2"><a href="blog.html" target="_blank"><i class="fa-solid fa-blog fa-xl"></i></a></div>
-                        <div class="col-2"><a href="https://www.linkedin.com/in/BoraYlmz" target="_blank"><i class="fa-brands fa-linkedin-in fa-xl"></i></a></div>
-                        <div class="col-2"><a href="https://github.com/BoraYlmz" target="_blank"><i class="fa-brands fa-github fa-xl"></i></a></div>
-                        <div class="col-2"><a href="https://instagram.com/in/bora._.ylmz" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a></div>   
+                    <div class="row justify-content-center pt-3 pr-3">
+                        <div class="col-2 m-0"><h6><a href="index.html" target="_blank"><i class="fa-solid fa-globe fa-xl"></i></a></h6></div>
+                        <div class="col-2 m-0"><h6><a href="blog.html" target="_blank"><i class="fa-solid fa-blog fa-xl"></i></a></h6></div>
+                        <div class="col-2 m-0"><h6><a href="https://www.linkedin.com/in/BoraYlmz" target="_blank"><i class="fa-brands fa-linkedin-in fa-xl"></i></a></h6></div>
+                        <div class="col-2 m-0"><h6><a href="https://github.com/BoraYlmz" target="_blank"><i class="fa-brands fa-github fa-xl"></i></a></h6></div>
+                        <div class="col-2 m-0"><h6><a href="https://instagram.com/in/bora._.ylmz" target="_blank"><i class="fa-brands fa-instagram fa-xl"></i></a></h6></div>
                     </div>
                 </div>
             </div> 
