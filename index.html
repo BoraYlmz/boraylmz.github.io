@@ -198,6 +198,19 @@
       justify-content: center;
       align-items: center;
     }
+    @media (max-width:1000px) {
+       .card {
+      width: 320px;
+      gap: 1rem;
+      padding: 1rem;
+    }
+    .button-group a {
+      width: 69px;
+    }
+    .nav button:hover {
+      background-color: transparent;
+    }
+    }
   </style>
 </head>
 
@@ -207,7 +220,7 @@
       <a href="blog.html">Blog ve Deneyimler</a>
       <a href="resume.html">Özgeçmiş Sayfası</a>
       <button id="themeButton" onclick="ToggleTheme()">
-        <span id="themeIcon" class="material-symbols-outlined">dark_mode</span>
+        <span id="themeIcon" class="material-symbols-outlined">light_mode</span>
       </button>
     </div>
     <div class="card-area">
