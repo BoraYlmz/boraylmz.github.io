@@ -1,7 +1,15 @@
 ---
 Başlık: "To Do Project"
-Özet: "Tkinter'a başladığım ilk zamanlarda yapmış olduğum masaüstü uygulaması olan todo projesidir. Detaylar için Lütfen Tıklayınız!!"
-Yazım Tarihi: "28.11.2024"
+Kategori: "Proje"
+Özet: "Tkinter ile yaptığım Todo uygulaması"
+YazımTarihi: "28.11.2024"
+Resim: |
+  <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+    <rect width="400" height="200" fill="#3B82F6"/>
+    <rect x="80" y="40" width="240" height="140" rx="12" fill="#fff" opacity="0.2"/>
+    <line x1="110" y1="80" x2="290" y2="80" stroke="#fff" opacity="0.3" stroke-width="6" stroke-linecap="round"/>
+    <line x1="110" y1="120" x2="270" y2="120" stroke="#fff" opacity="0.3" stroke-width="6" stroke-linecap="round"/>
+  </svg>
 ---
 
 
