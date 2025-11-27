@@ -1,869 +1,1009 @@
 <!DOCTYPE html>
 <html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bora Yılmaz Resume</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 10px 0;
+        margin: 0;
+      }
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bora Yılmaz Resume</title>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    rel="stylesheet" />
-  <style>
-    * {
-      padding: 10px 0;
-      margin: 0;
-    }
-
-    body {
-      background-color: #f5f5f7;
-      font-family: Manrope, sans-serif;
-      display: flex;
-      justify-content: center;
-      --text-color: rgb(51 51 51);
-      --grow-color: rgba(233 236 239);
-      --text-secondary: #6b7280;
-      --btn-hover: #e1e3e6;
-      --content-bg: #ffffff;
-      --bg-color: #f5f5f7;
-      --a-circle-color: rgba(59 130 246 / 0.2);
-      --primary: rgb(59 130 246);
-      transition: all 0.3s ease !important;
-    }
-
-    body.dark {
-      background-color: #131827;
-      --text-color: rgb(229 231 235);
-      --grow-color: var(--text-secondary);
-      --btn-hover: #2b2f3d;
-      --content-bg: #212937;
-      --bg-color: #131827;
-    }
-
-    .content {
-      width: 1000px;
-      height: auto;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 2rem;
-    }
-
-    /* #region Header*/
-    .header {
-      background-color: var(--content-bg);
-      height: 40px;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      border-radius: 1rem;
-      padding: 16px 40px;
-      color: var(--text-color);
-      gap: 10px;
-
-    }
-
-    .header .tag {
-      color: var(--primary);
-      font-size: 1.875rem;
-      letter-spacing: -5px;
-    }
-
-    .header .name {
-      font-weight: 700;
-      font-size: 1.1rem;
-    }
-
-    .header button {
-      display: flex;
-      padding: 0;
-      width: 40px;
-      height: 40px;
-      background-color: transparent;
-      border-radius: 50%;
-      border: 0;
-      cursor: pointer;
-      color: var(--text-color);
-      margin-left: auto;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease !important;
-    }
-
-    .header button:hover {
-      background-color: var(--btn-hover);
-      border-radius: 50%;
-      transform: scale(1.1);
-    }
-
-    /* #endregion Header*/
-
-    /* #region Profile*/
-    .profile {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 16px;
-      height: 330px;
-      background-color: var(--content-bg);
-      border-radius: 1rem;
-
-    }
-
-    .profile .line {
-      width: 480px;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .profile .profile-image {
-      background-image: url('https://github.com/BoraYlmz.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-      border-radius: 50%;
-      padding: 0;
-      width: 8rem;
-      height: 8rem;
-    }
-
-    .profile .profile-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      line-height: 1rem;
-    }
-
-    .profile h1 {
-      font-size: 1.5rem;
-      color: var(--text-color);
-    }
-
-    .profile p {
-      font-size: 1rem;
-      color: var(--text-secondary);
-    }
-
-    .profile button {
-      width: 100%;
-      line-height: 1.5rem;
-      font-weight: 700;
-      font-size: 0.875rem;
-      color: #ffffff;
-      background-color: var(--primary);
-      border: 0;
-      border-radius: 0.75rem;
-      cursor: pointer;
-      transition: all 0.3s ease !important;
-    }
-
-    .profile button:hover {
-      transform: scale(1.05);
-      filter: brightness(85%);
-    }
-
-    /* #endregion Profile*/
-
-    /* #region Social Media*/
-    .social-media {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 1rem;
-      padding: 1rem;
-      border-radius: 1rem;
-      height: 90px;
-
-      background-color: var(--content-bg);
-    }
-
-    .social-media a {
-      width: 149px;
-      height: 58px;
-      border: 0;
-      border-radius: 10px;
-      padding: 1rem;
-      background-color: var(--bg-color);
-      display: flex;
-      position: relative;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.75rem;
-      gap: 7px;
-      color: var(--text-color);
-      transition: all 0.3s ease !important;
-      cursor: pointer;
-      text-decoration: none;
-    }
-
-    .social-media a .circle {
-      padding: 0;
-      background-color: var(--a-circle-color);
-      border-radius: 50%;
-      width: 40px;
-      height: 40px;
-      color: var(--primary);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .social-media a:hover {
-      transform: scale(1.05);
-      background-color: var(--a-circle-color);
-    }
-
-    /* #endregion Social Media*/
-
-    /* #region Timeline*/
-    .timeline-box {
-      height: auto;
-      background-color: var(--content-bg);
-      padding: 3rem;
-      padding-top: 2rem;
-      border-radius: 1rem;
-    }
-
-    .timeline-box h2 {
-      font-weight: 700;
-      font-size: 22px;
-      color: var(--text-color);
-      padding-top: 0.5rem;
-      padding-bottom: 0;
-      margin: 0;
-    }
-
-    .timeline-box .grid {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      column-gap: 1rem;
-    }
-
-    .timeline-box .timeline {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.4rem;
-    }
-
-    .timeline-box .timeline .icon-circle {
-      width: 32px;
-      height: 32px;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: var(--a-circle-color);
-      color: var(--primary);
-      border-radius: 50%;
-
-    }
-
-    .timeline-box .timeline .icon-circle span {
-      font-weight: 300;
-      font-size: 1.5rem;
-    }
-
-    .timeline-box .timeline .grow {
-      display: flex;
-      flex-grow: 1;
-      width: 1px;
-      background-color: var(--grow-color);
-      border: 0;
-    }
-
-    .grow-short {
-      flex-grow: 0.1 !important;
-    }
-
-    .timeline-box .timeline .point {
-      width: 8px;
-      height: 8px;
-      background-color: var(--grow-color);
-      border-radius: 50%;
-      display: inline-block;
-      padding: 0;
-    }
-
-    .timeline-box .timeline-content {
-      display: flex;
-      flex: 1;
-      flex-direction: column;
-      padding-bottom: 1rem;
-      line-height: 1rem;
-    }
-
-    .timeline-box .timeline-content .timeline-header {
-      padding-top: 0;
-      color: var(--text-color);
-      font-weight: 600;
-      font-size: 1rem;
-    }
-
-    .timeline-box .timeline-content .timeline-name {
-      padding-top: 0;
-      color: var(--text-color);
-      font-weight: 400;
-      font-size: 1rem;
-      margin: 0;
-      color: var(--text-secondary);
-    }
-
-    .timeline-box .timeline-content .timeline-range {
-      padding-top: 0;
-      color: var(--text-color);
-      font-weight: 400;
-      font-size: 0.9rem;
-      margin: 0;
-      color: var(--text-secondary);
-    }
-
-    .timeline-box .timeline-content .description {
-      list-style-type: disc;
-      color: var(--text-secondary);
-      font-weight: 400;
-      font-size: 1rem;
-      padding-top: 0;
-      padding-left: 2rem;
-      text-align: justify;
-    }
-
-    .timeline-box .timeline-content .description li {
-      padding-bottom: 0.2rem;
-      line-height: 1.2rem;
-    }
-
-    /* #endregion Timeline*/
-
-    /* #region Skills*/
-    .skills {
-      height: auto;
-      border-radius: 1rem;
-      padding: 3rem;
-      padding-top: 2rem;
-      padding-bottom: 1rem;
-      background-color: var(--content-bg);
-    }
-
-    .skills h2 {
-      font-weight: 700;
-      font-size: 22px;
-      color: var(--text-color);
-      padding-top: 0.5rem;
-      padding-bottom: 0;
-      margin: 0;
-    }
-
-    .skills .skills-content {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      gap: 0.5rem;
-      row-gap: 1rem;
-      padding: 1rem;
-      width: 100%;
-      align-items: flex-end;
-    }
-
-    .skills .skills-content .item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0.25rem 0.75rem;
-      font-size: 0.9rem;
-      font-weight: 500;
-      line-height: 1.3rem;
-      color: var(--primary);
-      background-color: var(--a-circle-color);
-      border-radius: 1rem;
-      height: auto;
-    }
-
-    .skills .skills-content .item:hover {
-      background-color: var(--primary);
-      color: #ffffff;
-      transform: translateY(-2px);
-    }
-
-    .skills .skills-content .item-group {
-      position: relative;
-      display: flex;
-      align-items: center;
-      align-items: flex-end;
-      margin: 0;
-      padding: 0;
-    }
-
-    .skills .skills-content .group-title {
-      position: absolute;
-      top: -1.5rem;
-      left: 0;
-      font-size: 0.7rem;
-      font-weight: 600;
-      color: var(--text-color);
-      opacity: 0.7;
-      white-space: nowrap;
-    }
-
-    /* #endregion Skills*/
-    .footer {
-      color: var(--text-secondary);
-      position: relative;
-      width: 100%;
-      height: 100%;
-      margin-top: auto;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-    }
-
-    @media (max-width: 1000px) {
       body {
-        padding: 0 1rem;
+        background-color: #f5f5f7;
+        font-family: Manrope, sans-serif;
+        display: flex;
+        justify-content: center;
+        --text-color: rgb(51 51 51);
+        --grow-color: rgba(233 236 239);
+        --text-secondary: #6b7280;
+        --btn-hover: #e1e3e6;
+        --content-bg: #ffffff;
+        --bg-color: #f5f5f7;
+        --a-circle-color: rgba(59 130 246 / 0.2);
+        --primary: rgb(59 130 246);
+        transition: all 0.3s ease !important;
+      }
+
+      body.dark {
+        background-color: #131827;
+        --text-color: rgb(229 231 235);
+        --grow-color: var(--text-secondary);
+        --btn-hover: #2b2f3d;
+        --content-bg: #212937;
+        --bg-color: #131827;
       }
 
       .content {
-        width: 100%;
-        padding: 1rem;
-        gap: 1.5rem;
+        width: 1000px;
+        height: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
       }
 
-      /*#region Header mobil */
+      /* #region Header*/
       .header {
+        background-color: var(--content-bg);
+        height: 40px;
+        display: flex;
         flex-direction: row;
-        height: auto;
-        padding: 1rem;
-        text-align: center;
+        align-items: center;
+        border-radius: 1rem;
+        padding: 16px 40px;
+        color: var(--text-color);
+        gap: 10px;
+        position: relative;
+      }
+
+      .header .tag {
+        color: var(--primary);
+        font-size: 1.875rem;
+        letter-spacing: -5px;
+      }
+
+      .header .name {
+        font-weight: 700;
+        font-size: 1.1rem;
       }
 
       .header button {
+        display: flex;
+        padding: 0;
+        width: 40px;
+        height: 40px;
+        background-color: transparent;
+        border-radius: 50%;
+        border: 0;
+        cursor: pointer;
+        color: var(--text-color);
         margin-left: auto;
-        margin-top: 0.5rem;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease !important;
       }
 
-      /*#endregion Header mobil */
+      .header button:hover {
+        background-color: var(--btn-hover);
+        border-radius: 50%;
+        transform: scale(1.1);
+      }
+      .header .lang-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: -0.5rem;
+        cursor: pointer;
+      }
+      .header .lang {
+        color: var(--text-color);
+        font-size: 1rem;
+        font-weight: 600;
+      }
+      .header .chevron {
+        color: var(--primary);
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+      .header .language{
+        font-weight: 200;
+        margin-left: -0.3rem;
+      }
+      .header .information{
+        color: var(--text-secondary);
 
+      }
 
-      /*#region Profile mobil */
+      /* #endregion Header*/
+
+      /* #region Profile*/
       .profile {
-        height: auto;
-        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 16px;
+        height: 330px;
+        background-color: var(--content-bg);
+        border-radius: 1rem;
       }
 
       .profile .line {
-        width: 100%;
+        width: 480px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
       }
 
       .profile .profile-image {
-        width: 6rem;
-        height: 6rem;
+        background-image: url("https://github.com/BoraYlmz.png");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        border-radius: 50%;
+        padding: 0;
+        width: 8rem;
+        height: 8rem;
       }
 
-      .profile .profile-text h1 {
-        font-size: 1.25rem;
+      .profile .profile-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        line-height: 1rem;
       }
 
-      .profile .profile-text p {
-        font-size: 0.9rem;
+      .profile h1 {
+        font-size: 1.5rem;
+        color: var(--text-color);
       }
 
-      /*#endregion Profile mobil */
+      .profile p {
+        font-size: 1rem;
+        color: var(--text-secondary);
+      }
 
-      /*#region Social media mobil */
+      .profile button {
+        width: 100%;
+        line-height: 1.5rem;
+        font-weight: 700;
+        font-size: 0.875rem;
+        color: #ffffff;
+        background-color: var(--primary);
+        border: 0;
+        border-radius: 0.75rem;
+        cursor: pointer;
+        transition: all 0.3s ease !important;
+      }
+
+      .profile button:hover {
+        transform: scale(1.05);
+        filter: brightness(85%);
+      }
+
+      /* #endregion Profile*/
+
+      /* #region Social Media*/
       .social-media {
-        grid-template-columns: 1fr;
-        height: auto;
-        gap: 0.5rem;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
         padding: 1rem;
+        border-radius: 1rem;
+        height: 90px;
 
+        background-color: var(--content-bg);
       }
 
       .social-media a {
-        width: calc(100% - 2rem);
-      }
-
-      /*#endregion Social media mobil */
-
-      /*#region Timeline mobil */
-      .timeline-box {
+        width: 149px;
+        height: 58px;
+        border: 0;
+        border-radius: 10px;
         padding: 1rem;
+        background-color: var(--bg-color);
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        gap: 7px;
+        color: var(--text-color);
+        transition: all 0.3s ease !important;
+        cursor: pointer;
+        text-decoration: none;
       }
 
-      .timeline {
-        flex-direction: row;
-        align-items: flex-start;
+      .social-media a .circle {
+        padding: 0;
+        background-color: var(--a-circle-color);
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        color: var(--primary);
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
 
-      .timeline-content {
-        margin-top: 1rem;
+      .social-media a:hover {
+        transform: scale(1.05);
+        background-color: var(--a-circle-color);
+      }
+
+      /* #endregion Social Media*/
+
+      /* #region Timeline*/
+      .timeline-box {
+        height: auto;
+        background-color: var(--content-bg);
+        padding: 3rem;
+        padding-top: 2rem;
+        border-radius: 1rem;
+      }
+
+      .timeline-box h2 {
+        font-weight: 700;
+        font-size: 22px;
+        color: var(--text-color);
+        padding-top: 0.5rem;
+        padding-bottom: 0;
+        margin: 0;
+      }
+
+      .timeline-box .grid {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: 1rem;
+      }
+
+      .timeline-box .timeline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .timeline-box .timeline .icon-circle {
+        width: 32px;
+        height: 32px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--a-circle-color);
+        color: var(--primary);
+        border-radius: 50%;
+      }
+
+      .timeline-box .timeline .icon-circle span {
+        font-weight: 300;
+        font-size: 1.5rem;
+      }
+
+      .timeline-box .timeline .grow {
+        display: flex;
+        flex-grow: 1;
+        width: 1px;
+        background-color: var(--grow-color);
+        border: 0;
       }
 
       .grow-short {
-        flex-grow: 0.03 !important;
+        flex-grow: 0.1 !important;
       }
 
-      .timeline-header {
-        font-size: 0.9rem !important;
-      }
-
-      .timeline-name {
-        font-size: 0.9rem !important;
-      }
-
-      .timeline-range {
-        font-size: 0.8rem !important;
-      }
-
-      .description {
-        font-size: 0.8rem !important;
-        padding-left: 1rem !important;
-      }
-
-      .timeline-content {
+      .timeline-box .timeline .point {
+        width: 8px;
+        height: 8px;
+        background-color: var(--grow-color);
+        border-radius: 50%;
+        display: inline-block;
         padding: 0;
       }
 
-      /*#endregion Timeline mobil */
+      .timeline-box .timeline-content {
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+        padding-bottom: 1rem;
+        line-height: 1rem;
+      }
+
+      .timeline-box .timeline-content .timeline-header {
+        padding-top: 0;
+        color: var(--text-color);
+        font-weight: 600;
+        font-size: 1rem;
+      }
+
+      .timeline-box .timeline-content .timeline-name {
+        padding-top: 0;
+        color: var(--text-color);
+        font-weight: 400;
+        font-size: 1rem;
+        margin: 0;
+        color: var(--text-secondary);
+      }
+
+      .timeline-box .timeline-content .timeline-range {
+        padding-top: 0;
+        color: var(--text-color);
+        font-weight: 400;
+        font-size: 0.9rem;
+        margin: 0;
+        color: var(--text-secondary);
+      }
+
+      .timeline-box .timeline-content .description {
+        list-style-type: disc;
+        color: var(--text-secondary);
+        font-weight: 400;
+        font-size: 1rem;
+        padding-top: 0;
+        padding-left: 2rem;
+        text-align: justify;
+      }
+
+      .timeline-box .timeline-content .description li {
+        padding-bottom: 0.2rem;
+        line-height: 1.2rem;
+      }
+
+      /* #endregion Timeline*/
+
+      /* #region Skills*/
       .skills {
-        padding: 1rem;
+        height: auto;
+        border-radius: 1rem;
+        padding: 3rem;
+        padding-top: 2rem;
+        padding-bottom: 1rem;
+        background-color: var(--content-bg);
+      }
+
+      .skills h2 {
+        font-weight: 700;
+        font-size: 22px;
+        color: var(--text-color);
+        padding-top: 0.5rem;
+        padding-bottom: 0;
+        margin: 0;
       }
 
       .skills .skills-content {
         display: flex;
         flex-wrap: wrap;
-        gap: 0.5rem;
-        align-items: flex-start;
-      }
-
-      .skills .skills-content .skills .skills-content .item {
-        display: flex;
-        padding: 0.25rem 0.75rem;
-        border-radius: 1rem;
-        background-color: var(--a-circle-color);
-        color: var(--primary);
-      }
-    }
-
-    @media print {
-      @page {
-        margin: 0;
-      }
-
-      body,
-      html {
-        margin: 0;
-        padding: 0;
-        -webkit-print-color-adjust: exact;
-        font-family: Manrope, sans-serif;
-      }
-
-      body.dark {
-        margin: 0;
-        padding: 0;
-        background-color: #ffffff;
-        --text-color: rgb(51 51 51);
-        --grow-color: rgba(233 236 239);
-        --content-bg: #f5f5f7;
-        --bg-color: #ffffff;
-        font-family: Manrope, sans-serif;
-      }
-
-      .content {
-        width: 190mm;
-        padding: 10mm;
-      }
-
-      .timeline-box {
-        padding-bottom: 1rem;
-      }
-
-      button,
-      .header,
-      .footer {
-        display: none;
-      }
-
-      .social-media {
-        display: flex;
         flex-direction: row;
-        gap: 1rem;
+        gap: 0.5rem;
+        row-gap: 1rem;
+        padding: 1rem;
+        width: 100%;
+        align-items: flex-end;
       }
 
-      .social-media a {
-        display: none
-      }
-
-      .social-media a:nth-child(-n+2) {
+      .skills .skills-content .item {
         display: flex;
         align-items: center;
         justify-content: center;
+        padding: 0.25rem 0.75rem;
+        font-size: 0.9rem;
+        font-weight: 500;
+        line-height: 1.3rem;
+        color: var(--primary);
+        background-color: var(--a-circle-color);
+        border-radius: 1rem;
+        height: auto;
       }
-    }
-  </style>
-</head>
 
-<body class="dark">
-  <div class="content">
-    <div class="header">
-      <span class="material-symbols-outlined tag">code</span><span class="name">Bora Yılmaz</span>
-      <button id="themeButton" onclick="ToggleTheme()">
-        <span id="themeIcon" class="material-symbols-outlined">light_mode</span>
-      </button>
-    </div>
-    <div class="profile">
-      <div class="line">
-        <div class="profile-image"></div>
-        <div class="profile-text">
-          <h1>Bora Yılmaz</h1>
-          <p>Olabildiğince Full-Stack & Yazılım Meraklısı</p>
-          <p>Kendini geliştirmeye açık yazılımın her dalına meraklı, geçmişi olmayan bir junior developer.</p>
-        </div>
-        <button onclick="window.print()">Özgeçmişi İndir</button>
-      </div>
-    </div>
-    <div class="social-media">
-      <a href="#">
-        <div class="circle">
-          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"
-            stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-            <path
-              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-            </path>
-          </svg>
-        </div>
-        +90 543 645 12 26
-      </a>
-      <a href="#">
-        <div class="circle">
-          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"
-            stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-            <polyline points="22,6 12,13 2,6"></polyline>
-          </svg>
-        </div>
-        by.2001@outlook.com
-      </a>
-      <a href="https://www.linkedin.com/in/BoraYlmz" target="_blank">
-        <div class="circle">
-          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="1.6" fill="none"
-            stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-            <rect x="2" y="9" width="4" height="12"></rect>
-            <circle cx="4" cy="4" r="2"></circle>
-          </svg>
-        </div>
-        LinkedIn
-      </a>
-      <a href="https://github.com/BoraYlmz" target="_blank">
-        <div class="circle">
-          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"
-            stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-            <path
-              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-            </path>
-          </svg>
-        </div>
-        GitHub
-      </a>
-      <a href="https://www.instagram.com/bora._.ylmz" target="_blank">
-        <div class="circle">
-          <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2" fill="none"
-            stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-          </svg>
-        </div>
-        Instagram
-      </a>
-    </div>
-    <div class="timeline-box">
-      <h2>Deneyim</h2>
-      <div class="grid">
-        <!-- grid item -->
-        <div class="timeline">
-          <div class="icon-circle">
-            <span class="material-symbols-outlined !text-xl">
-              business_center
-            </span>
-          </div>
-          <div class="grow grow-short">
-          </div>
-          <div class="point"></div>
-          <div class="grow"></div>
-        </div>
-        <div class="timeline-content">
-          <p class="timeline-header">Okul İlişkileri Destek Takım Lideri</p>
-          <p class="timeline-name">Okul Sepeti Pazarlama A.Ş.</p>
-          <p class="timeline-range">02.2025 - Günümüz</p>
-          <p class="timeline-header">Sistem Destek Uzmanı</p>
-          <p class="timeline-range">04.2023 - 02.2025</p>
-          <ul class="description">
-            <li>Mayıs - Kasım döneminde, özel okullar için veritabanı yönetimi ve şablon tabanlı sistemler kullanarak
-              satış web siteleri tasarladım ve geliştirdim.</li>
-            <li>Satış verileri üzerinden SQL ve Excel formatlarında düzenli raporlamalar gerçekleştirdim.</li>
-            <li>Kullanıcı deneyimini iyileştirmek amacıyla sistemde hata tespiti yaptım ve kullanıcı arayüzü tasarımı
-              ile geliştirme süreçlerinde aktif rol aldım.</li>
-            <li>Diğer aylarda Python kullanarak raporlama araçları ve veritabanı yönetim sistemleri geliştirdim.</li>
-            <li>Edindiğim yazılım bilgileriyle, başlangıçta Python (Tkinter) kullanarak bir masaüstü uygulama
-              geliştirdim ve ilk büyük projemi bağımsız olarak tamamladım.</li>
-            <li>Daha sonra web arayüzü geliştirme sürecine geçerek, React kullanarak projeyi yeniden yapılandırma ve
-              modernleştirme adımlarını yürüttüm. Halen bu proje üzerinde aktif olarak çalışmaktayım.</li>
-
-          </ul>
-        </div>
-        <!-- grid item -->
-        <div class="timeline">
-          <div class="icon-circle">
-            <span class="material-symbols-outlined !text-xl"">
-              business_center
-            </span>
-          </div>
-          <div class=" grow">
-          </div>
-
-        </div>
-        <div class="timeline-content">
-          <p class="timeline-header">Stajyer</p>
-          <p class="timeline-name">Karsan Automotive</p>
-          <p class="timeline-range">06.2018 - 08.2018</p>
-          <ul class="description">
-            <li>Otomotiv sektöründe web geliştirme departmanında stajyer olarak görev aldım.</li>
-            <li>Web sitesi geliştirme ve bakım süreçleri hakkında bilgi edindim.</li>
-            <li>Web sayfalarını güncelleme, temel kodlama ve kullanıcı arayüzü iyileştirme konularında eğitim aldım.
-            </li>
-          </ul>
-        </div>
-        <!-- grid item -->
-        <div class="timeline">
-          <div class="icon-circle">
-            <span class="material-symbols-outlined !text-xl"">
-              business_center
-            </span>
-          </div>
-          <div class=" grow">
-          </div>
-
-        </div>
-        <div class="timeline-content">
-          <p class="timeline-header">Stajyer</p>
-          <p class="timeline-name">ENTES Elektronik</p>
-          <p class="timeline-range">06.2017 - 07.2017</p>
-          <ul class="description">
-            <li>BT departmanında stajyer olarak görev aldım.</li>
-            <li>Sistem bakımı, yazılım desteği ve veri yönetimi gibi görevler yürüttüm.</li>
-            <li>Teknik ekip ile iş birliği yaparak günlük operasyonlara katkıda bulundum.</li>
-            <li>Staj süresince pratik deneyim kazanarak teknik becerilerimi geliştirdim.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="skills">
-      <h2>Beceriler</h2>
-
-
-      <div class="skills-content">
-        <span class="item-group">
-          <span class="group-title">Programlama Dilleri</span>
-          <span class="item">Python</span>
-        </span>
-        <span class="item">C#</span>
-        <span class="item">C++</span>
-        <span class="item">JavaScript</span>
-
-        <span class="item-group">
-          <span class="group-title">Veri & Veritabanı</span>
-          <span class="item">SQL</span>
-        </span>
-        <span class="item">Mongo</span>
-        <span class="item-group">
-          <span class="group-title">Web Teknolojileri</span>
-          <span class="item">HTML</span>
-        </span>
-        <span class="item">CSS</span>
-        <span class="item">React</span>
-        <span class="item">Rest API / Fetch</span>
-        <span class="item">UI/UX Design</span>
-
-        <span class="item-group">
-          <span class="group-title">Araçlar</span>
-          <span class="item">Ofis Programları</span>
-        </span>
-        <span class="item">VS Code</span>
-        <span class="item">Git / GitHub</span>
-        <span class="item-group">
-          <span class="group-title">Kişisel Beceriler</span>
-          <span class="item">Takım Çalışması</span>
-        </span>
-        <span class="item">Problem Çözme</span>
-        <span class="item">Zaman Yönetimi</span>
-        <span class="item">Adaptasyon</span>
-      </div>
-    </div>
-
-    <div class="timeline-box">
-      <h2>Eğitim</h2>
-      <div class="grid">
-        <!-- grid item -->
-        <div class="timeline">
-          <div class="icon-circle">
-            <span class="material-symbols-outlined !text-xl">
-              school
-            </span>
-          </div>
-          <div class=" grow">
-          </div>
-
-        </div>
-        <div class="timeline-content">
-          <p class="timeline-header">İstinye Üniversitesi</p>
-          <p class="timeline-name">Bilgisayar Programcılığı (Ön Lisans)</p>
-          <p class="timeline-range">2019 - 2021</p>
-        </div>
-        <!-- grid item -->
-        <div class="timeline">
-          <div class="icon-circle">
-            <span class="material-symbols-outlined !text-xl">
-              school
-            </span>
-          </div>
-          <div class=" grow">
-          </div>
-
-        </div>
-        <div class="timeline-content">
-          <p class="timeline-header">75.Yıl Devlet Malzeme Ofisi Mesleki Ve Teknik Anadolu Lisesi</p>
-          <p class="timeline-name">Nesne Tabanlı Programlama</p>
-          <p class="timeline-range">2015 - 2019</p>
-        </div>
-      </div>
-    </div>
-    <div class=" footer">© 2024 Bora Yılmaz. Tüm hakları saklıdır.
-    </div>
-  </div>
-
-  <script>
-    function ToggleTheme() {
-      const body = document.body;
-      const icon = document.getElementById("themeIcon");
-
-      body.classList.toggle("dark");
-
-      if (body.classList.contains("dark")) {
-        icon.textContent = "light_mode";
-      } else {
-        icon.textContent = "dark_mode";
+      .skills .skills-content .item:hover {
+        background-color: var(--primary);
+        color: #ffffff;
+        transform: translateY(-2px);
       }
-    }
-  </script>
-</body>
 
+      .skills .skills-content .item-group {
+        position: relative;
+        display: flex;
+        align-items: center;
+        align-items: flex-end;
+        margin: 0;
+        padding: 0;
+      }
+
+      .skills .skills-content .group-title {
+        position: absolute;
+        top: -1.5rem;
+        left: 0;
+        font-size: 0.7rem;
+        font-weight: 600;
+        color: var(--text-color);
+        opacity: 0.7;
+        white-space: nowrap;
+      }
+
+      /* #endregion Skills*/
+      .footer {
+        color: var(--text-secondary);
+        position: relative;
+        width: 100%;
+        height: 100%;
+        margin-top: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+      }
+
+      @media (max-width: 1000px) {
+        body {
+          padding: 0 1rem;
+        }
+
+        .content {
+          width: 100%;
+          padding: 1rem;
+          gap: 1.5rem;
+        }
+
+        /*#region Header mobil */
+        .header {
+          flex-direction: row;
+          position: relative;
+          height: auto;
+          padding: 1rem;
+          text-align: center;
+        }
+
+        .header button {
+          margin-left: auto;
+          margin-top: 0.5rem;
+        }
+        .header .information{
+          display: flex;
+          padding-left: 1.5rem;
+          bottom: 0;
+          position: absolute;
+          left: 0;
+        }
+
+        /*#endregion Header mobil */
+
+        /*#region Profile mobil */
+        .profile {
+          height: auto;
+          padding: 1rem;
+        }
+
+        .profile .line {
+          width: 100%;
+        }
+
+        .profile .profile-image {
+          width: 6rem;
+          height: 6rem;
+        }
+
+        .profile .profile-text h1 {
+          font-size: 1.25rem;
+        }
+
+        .profile .profile-text p {
+          font-size: 0.9rem;
+        }
+
+        /*#endregion Profile mobil */
+
+        /*#region Social media mobil */
+        .social-media {
+          grid-template-columns: 1fr;
+          height: auto;
+          gap: 0.5rem;
+          padding: 1rem;
+        }
+
+        .social-media a {
+          width: calc(100% - 2rem);
+        }
+
+        /*#endregion Social media mobil */
+
+        /*#region Timeline mobil */
+        .timeline-box {
+          padding: 1rem;
+        }
+
+        .timeline {
+          flex-direction: row;
+          align-items: flex-start;
+        }
+
+        .timeline-content {
+          margin-top: 1rem;
+        }
+
+        .grow-short {
+          flex-grow: 0.03 !important;
+        }
+
+        .timeline-header {
+          font-size: 0.9rem !important;
+        }
+
+        .timeline-name {
+          font-size: 0.9rem !important;
+        }
+
+        .timeline-range {
+          font-size: 0.8rem !important;
+        }
+
+        .description {
+          font-size: 0.8rem !important;
+          padding-left: 1rem !important;
+        }
+
+        .timeline-content {
+          padding: 0;
+        }
+
+        /*#endregion Timeline mobil */
+        .skills {
+          padding: 1rem;
+        }
+
+        .skills .skills-content {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          align-items: flex-start;
+        }
+
+        .skills .skills-content .skills .skills-content .item {
+          display: flex;
+          padding: 0.25rem 0.75rem;
+          border-radius: 1rem;
+          background-color: var(--a-circle-color);
+          color: var(--primary);
+        }
+      }
+
+      @media print {
+        @page {
+          margin: 0;
+        }
+
+        body,
+        html {
+          margin: 0;
+          padding: 0;
+          -webkit-print-color-adjust: exact;
+          font-family: Manrope, sans-serif;
+        }
+
+        body.dark {
+          margin: 0;
+          padding: 0;
+          background-color: #ffffff;
+          --text-color: rgb(51 51 51);
+          --grow-color: rgba(233 236 239);
+          --content-bg: #f5f5f7;
+          --bg-color: #ffffff;
+          font-family: Manrope, sans-serif;
+        }
+
+        .content {
+          width: 190mm;
+          padding: 10mm;
+        }
+
+        .timeline-box {
+          padding-bottom: 1rem;
+        }
+
+        button,
+        .header,
+        .footer {
+          display: none;
+        }
+
+        .social-media {
+          display: flex;
+          flex-direction: row;
+          gap: 1rem;
+        }
+
+        .social-media a {
+          display: none;
+        }
+
+        .social-media a:nth-child(-n + 2) {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+
+  <body class="dark">
+    <div class="content">
+      <div class="header">
+        <span onclick="ToggleLanguage()" class="lang-group">
+          <span class="material-symbols-outlined chevron">chevron_left</span>
+          <span class="material-symbols-outlined language">language</span>
+          <span class="lang EN" id="lang">EN</span>
+          <span class="material-symbols-outlined chevron">chevron_right</span>
+        </span>
+        <span class="name">Bora Yılmaz</span>
+        <span id="information" class="information" data-tr="English Translation done by AI." data-en="English Translation done by AI."></span>
+        <button id="themeButton" onclick="ToggleTheme()">
+          <span id="themeIcon" class="material-symbols-outlined"
+            >light_mode</span
+          >
+        </button>
+      </div>
+      <div class="profile">
+        <div class="line">
+          <div class="profile-image"></div>
+          <div class="profile-text">
+            <h1>Bora Yılmaz</h1>
+            <p
+              data-tr="Olabildiğince Full-Stack & Yazılım Meraklısı"
+              data-en="As much as possible, a Full-Stack & Software Enthusiast."
+            ></p>
+            <p
+              data-tr="Kendini geliştirmeye açık yazılımın her dalına meraklı, geçmişi olmayan bir junior developer."
+              data-en="A junior developer with no past experience, open to self-improvement and curious about every branch of software."
+            ></p>
+          </div>
+          <button
+            onclick="window.print()"
+            data-tr="Özgeçmişi İndir"
+            data-en="Download CV"
+          ></button>
+        </div>
+      </div>
+      <div class="social-media">
+        <a href="#">
+          <div class="circle">
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="css-i6dzq1"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"
+              ></path>
+            </svg>
+          </div>
+          +90 543 645 12 26
+        </a>
+        <a href="#">
+          <div class="circle">
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="css-i6dzq1"
+            >
+              <path
+                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+              ></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          by.2001@outlook.com
+        </a>
+        <a href="https://www.linkedin.com/in/BoraYlmz" target="_blank">
+          <div class="circle">
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              stroke="currentColor"
+              stroke-width="1.6"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="css-i6dzq1"
+            >
+              <path
+                d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+              ></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </div>
+          LinkedIn
+        </a>
+        <a href="https://github.com/BoraYlmz" target="_blank">
+          <div class="circle">
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="css-i6dzq1"
+            >
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"
+              ></path>
+            </svg>
+          </div>
+          GitHub
+        </a>
+        <a href="https://www.instagram.com/bora._.ylmz" target="_blank">
+          <div class="circle">
+            <svg
+              viewBox="0 0 24 24"
+              width="22"
+              height="22"
+              stroke="currentColor"
+              stroke-width="2"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="css-i6dzq1"
+            >
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </div>
+          Instagram
+        </a>
+      </div>
+      <div class="timeline-box">
+        <h2 data-tr="Deneyim" data-en="Experience"></h2>
+        <div class="grid">
+          <!-- grid item -->
+          <div class="timeline">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined !text-xl">
+                business_center
+              </span>
+            </div>
+            <div class="grow grow-short"></div>
+            <div class="point"></div>
+            <div class="grow"></div>
+          </div>
+          <div class="timeline-content">
+            <p
+              class="timeline-header"
+              data-tr="Okul İlişkileri Destek Takım Lideri"
+              data-en="School Relations Support Team Leader"
+            ></p>
+            <p class="timeline-name">Okul Sepeti Pazarlama A.Ş.</p>
+            <p
+              class="timeline-range"
+              data-tr="02.2025 - Günümüz"
+              data-en="02.2025 - Present"
+            ></p>
+            <p
+              class="timeline-header"
+              data-tr="Sistem Destek Uzmanı"
+              data-en="System Support Specialist"
+            ></p>
+            <p class="timeline-range">04.2023 - 02.2025</p>
+            <ul class="description">
+              <li
+                data-tr="Mayıs - Kasım döneminde, özel okullar için veritabanı yönetimi ve şablon tabanlı sistemler kullanarak satış web siteleri tasarladım ve geliştirdim."
+                data-en="During the May - November period, I designed and developed sales websites for private schools using database management and template-based systems."
+              ></li>
+              <li
+                data-tr="Satış verileri üzerinden SQL ve Excel formatlarında düzenli raporlamalar gerçekleştirdim."
+                data-en="I created regular reports in SQL and Excel formats based on sales data."
+              ></li>
+              <li
+                data-tr="Kullanıcı deneyimini iyileştirmek amacıyla sistemde hata tespiti yaptım ve kullanıcı arayüzü tasarımı ile geliştirme süreçlerinde aktif rol aldım."
+                data-en="I identified system errors to improve user experience and played an active role in user interface design and development processes."
+              ></li>
+              <li
+                data-tr="Diğer aylarda Python kullanarak raporlama araçları ve veritabanı yönetim sistemleri geliştirdim."
+                data-en="In the other months, I developed reporting tools and database management systems using Python."
+              ></li>
+              <li
+                data-tr="Edindiğim yazılım bilgileriyle, başlangıçta Python (Tkinter) kullanarak bir masaüstü uygulama geliştirdim ve ilk büyük projemi bağımsız olarak tamamladım."
+                data-en="With the software knowledge I acquired, I initially developed a desktop application using Python (Tkinter) and completed my first major project independently."
+              ></li>
+              <li
+                data-tr="Daha sonra web arayüzü geliştirme sürecine geçerek, React kullanarak projeyi yeniden yapılandırma ve modernleştirme adımlarını yürüttüm. Halen bu proje üzerinde aktif olarak çalışmaktayım."
+                data-en="Later, I moved on to the web interface development process, restructuring and modernizing the project using React. I am still actively working on this project."
+              ></li>
+            </ul>
+          </div>
+          <!-- grid item -->
+          <div class="timeline">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined !text-xl">
+                business_center
+              </span>
+            </div>
+            <div class="grow"></div>
+          </div>
+          <div class="timeline-content">
+            <p class="timeline-header" data-tr="Stajyer" data-en="Intern"></p>
+            <p class="timeline-name">Karsan Automotive</p>
+            <p class="timeline-range">06.2018 - 08.2018</p>
+            <ul class="description">
+              <li data-tr="Otomotiv sektöründe web geliştirme departmanında stajyer olarak görev aldım." data-en="I worked as an intern in the web development department of the automotive industry.">
+                
+              </li>
+              <li data-tr="Web sitesi geliştirme ve bakım süreçleri hakkında bilgi edindim." data-en="I gained knowledge about website development and maintenance processes.">
+                
+              </li>
+              <li data-tr="Web sayfalarını güncelleme, temel kodlama ve kullanıcı arayüzü iyileştirme konularında eğitim aldım." data-en="I received training on updating web pages, basic coding, and user interface improvement.">
+
+              </li>
+            </ul>
+          </div>
+          <!-- grid item -->
+          <div class="timeline">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined !text-xl">
+                business_center
+              </span>
+            </div>
+            <div class="grow"></div>
+          </div>
+          <div class="timeline-content">
+            <p class="timeline-header" data-tr="Stajyer" data-en="Intern"></p>
+            <p class="timeline-name">ENTES Elektronik</p>
+            <p class="timeline-range">06.2017 - 07.2017</p>
+            <ul class="description">
+              <li data-tr="BT departmanında stajyer olarak görev aldım." data-en="I worked as an intern in the IT department."></li>
+              <li data-tr="Sistem bakımı, yazılım desteği ve veri yönetimi gibi görevler yürüttüm." data-en="I performed tasks such as system maintenance, software support, and data management.">
+                
+              </li>
+              <li data-tr="Teknik ekip ile iş birliği yaparak günlük operasyonlara katkıda bulundum." data-en="I contributed to daily operations by collaborating with the technical team.">
+                
+              </li>
+              <li data-tr=" Staj süresince pratik deneyim kazanarak teknik becerilerimi geliştirdim." data-en="During the internship, I gained practical experience and developed my technical skills.">
+               
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="skills">
+        <h2 data-tr="Beceriler" data-en="Skills"></h2>
+
+        <div class="skills-content">
+          <span class="item-group">
+            <span class="group-title" data-tr="Programlama Dilleri" data-en="Programming Languages"></span>
+            <span class="item">Python</span>
+          </span>
+          <span class="item">C#</span>
+          <span class="item">C++</span>
+          <span class="item">JavaScript</span>
+
+          <span class="item-group">
+            <span class="group-title" data-tr="Veri & Veritabanı" data-en="Data & Databases"></span>
+            <span class="item">SQL</span>
+          </span>
+          <span class="item">Mongo</span>
+          <span class="item-group">
+            <span class="group-title" data-tr="Web Teknolojileri" data-en="Web Technologies"></span>
+            <span class="item">HTML</span>
+          </span>
+          <span class="item">CSS</span>
+          <span class="item">React</span>
+          <span class="item">Rest API / Fetch</span>
+          <span class="item">UI/UX Design</span>
+
+          <span class="item-group">
+            <span class="group-title" data-tr="Araçlar" data-en="Tools"></span>
+            <span class="item" data-tr="Ofis Programları" data-en="MS Office"></span></span>
+          </span>
+          <span class="item">VS Code</span>
+          <span class="item">Git / GitHub</span>
+          <span class="item-group">
+            <span class="group-title" data-tr="Kişisel Beceriler" data-en="“Personal Skills"></span>
+            <span class="item" data-tr="Takım Çalışması" data-en="Teamwork"></span>
+          </span>
+          <span class="item" data-tr="Problem Çözme" data-en="Problem Solving"></span>
+          <span class="item" data-tr="Zaman Yönetimi" data-en="Time Management"></span>
+          <span class="item" data-tr="Adaptasyon" data-en="Adaptability"></span>
+        </div>
+      </div>
+
+      <div class="timeline-box">
+        <h2 data-tr="Eğitim" data-en="Education"></h2>
+        <div class="grid">
+          <!-- grid item -->
+          <div class="timeline">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined !text-xl"> school </span>
+            </div>
+            <div class="grow"></div>
+          </div>
+          <div class="timeline-content">
+            <p class="timeline-header" data-tr="İstinye Üniversitesi" data-en="Istinye University"></p>
+            <p class="timeline-name" data-tr="Bilgisayar Programcılığı (Ön Lisans)" data-en="Computer Programming (Associate Degree)"></p>
+            <p class="timeline-range">2019 - 2021</p>
+          </div>
+          <!-- grid item -->
+          <div class="timeline">
+            <div class="icon-circle">
+              <span class="material-symbols-outlined !text-xl"> school </span>
+            </div>
+            <div class="grow"></div>
+          </div>
+          <div class="timeline-content">
+            <p class="timeline-header" data-tr="75.Yıl Devlet Malzeme Ofisi Mesleki Ve Teknik Anadolu Lisesi" data-en="75.Yıl Devlet Malzeme Ofisi Of Vocational and Technical Anatolian High School">
+              
+            </p>
+            <p class="timeline-name" data-tr="Nesne Tabanlı Programlama" data-en="Object-Oriented Programming"></p>
+            <p class="timeline-range">2015 - 2019</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer" data-tr="© 2024 Bora Yılmaz. Tüm hakları saklıdır." data-en="© 2024 Bora Yılmaz. All rights reserved."></div>
+    </div>
+
+    <script>
+      function ToggleTheme() {
+        const body = document.body;
+        const icon = document.getElementById("themeIcon");
+
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+          icon.textContent = "light_mode";
+        } else {
+          icon.textContent = "dark_mode";
+        }
+      }
+      function ToggleLanguage() {
+        const langbtn = document.getElementById("lang");
+
+        langbtn.classList.toggle("EN");
+        if (langbtn.classList.contains("EN")) {
+          langbtn.textContent = "EN";
+          document.querySelectorAll("[data-tr]").forEach((el) => {
+            el.innerText = el.getAttribute("data-en");
+          });
+        } else {
+          langbtn.textContent = "TR";
+          document.querySelectorAll("[data-en]").forEach((el) => {
+            el.innerText = el.getAttribute("data-tr");
+          });
+        }
+      }
+      document.addEventListener("DOMContentLoaded", () => {
+        ToggleLanguage();
+      });
+    </script>
+  </body>
 </html>
