@@ -1,7 +1,31 @@
+
 ---
 Başlık: "Report & Send Mail"
+Kategori: "Proje"
 Özet: "Veritabanındaki istediğimiz koşullarda ayarlanan zaman ve kişilere istenilen formatta şablonlu bir şekilde hafızadan direkt mail gönderen bir raporlama aracıdır."
-Yazım Tarihi: "28.11.2024"
+YazımTarihi: "28.11.2024"
+Resim: |
+  <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="400" height="200" rx="12" fill="#3B82F6"/>
+  
+  <!-- Database cylinder -->
+  <ellipse cx="70" cy="60" rx="40" ry="15" fill="#fff" opacity="0.2"/>
+  <rect x="30" y="60" width="80" height="60" fill="#fff" opacity="0.2"/>
+  <ellipse cx="70" cy="120" rx="40" ry="15" fill="#fff" opacity="0.2"/>
+  
+  <!-- Spreadsheet / Excel sheet -->
+  <rect x="160" y="50" width="120" height="100" rx="6" fill="#fff" opacity="0.3"/>
+  <line x1="170" y1="70" x2="270" y2="70" stroke="#3B82F6" stroke-width="2"/>
+  <line x1="170" y1="90" x2="270" y2="90" stroke="#3B82F6" stroke-width="2"/>
+  <line x1="170" y1="110" x2="270" y2="110" stroke="#3B82F6" stroke-width="2"/>
+  <line x1="170" y1="130" x2="270" y2="130" stroke="#3B82F6" stroke-width="2"/>
+  
+  <!-- Email envelope -->
+  <rect x="300" y="70" width="60" height="40" rx="4" fill="#fff" opacity="0.3"/>
+  <polyline points="300,70 330,90 360,70" fill="none" stroke="#3B82F6" stroke-width="2"/>
+  <line x1="300" y1="70" x2="360" y2="70" stroke="#3B82F6" stroke-width="2"/>
+</svg>
 ---
 
 # [Report & Send Mail](https://github.com/BoraYlmz/Report-and-Send-Mail)
