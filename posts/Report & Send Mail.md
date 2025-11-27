@@ -5,18 +5,42 @@ Kategori: "Proje"
 YazımTarihi: "28.11.2024"
 Resim: |
   <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
-    <rect width="400" height="200" rx="12" fill="#3B82F6"/>
-    <ellipse cx="70" cy="60" rx="40" ry="15" fill="#fff" opacity="0.2"/>
-    <rect x="30" y="60" width="80" height="60" fill="#fff" opacity="0.2"/>
-    <ellipse cx="70" cy="120" rx="40" ry="15" fill="#fff" opacity="0.2"/>
-    <rect x="160" y="50" width="120" height="100" rx="6" fill="#fff" opacity="0.3"/>
-    <line x1="170" y1="70" x2="270" y2="70" stroke="#3B82F6" stroke-width="2"/>
-    <line x1="170" y1="90" x2="270" y2="90" stroke="#3B82F6" stroke-width="2"/>
-    <line x1="170" y1="110" x2="270" y2="110" stroke="#3B82F6" stroke-width="2"/>
-    <line x1="170" y1="130" x2="270" y2="130" stroke="#3B82F6" stroke-width="2"/>
-    <rect x="300" y="70" width="60" height="40" rx="4" fill="#fff" opacity="0.3"/>
-    <polyline points="300,70 330,90 360,70" fill="none" stroke="#3B82F6" stroke-width="2"/>
-    <line x1="300" y1="70" x2="360" y2="70" stroke="#3B82F6" stroke-width="2"/>
+    <!-- Background gradient -->
+    <defs>
+      <linearGradient id="bgGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#D0E7FF"/>
+        <stop offset="100%" stop-color="#A0C4FF"/>
+      </linearGradient>
+      <linearGradient id="dbGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#3B82F6"/>
+        <stop offset="100%" stop-color="#60A5FA"/>
+      </linearGradient>
+      <linearGradient id="sheetGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#FACC15"/>
+        <stop offset="100%" stop-color="#FBBF24"/>
+      </linearGradient>
+      <linearGradient id="mailGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#10B981"/>
+        <stop offset="100%" stop-color="#34D399"/>
+      </linearGradient>
+    </defs>
+    <ellipse cx="70" cy="60" rx="40" ry="15" fill="url(#dbGrad)" opacity="0.9"/>
+    <rect x="30" y="60" width="80" height="60" fill="url(#dbGrad)" opacity="0.3"/>
+    <ellipse cx="70" cy="120" rx="40" ry="15" fill="url(#dbGrad)" opacity="0.9"/>
+    <rect x="160" y="50" width="120" height="100" rx="6" fill="url(#sheetGrad)" opacity="0.9"/>
+    <line x1="170" y1="70" x2="270" y2="70" stroke="#fff" stroke-width="2"/>
+    <line x1="170" y1="90" x2="270" y2="90" stroke="#fff" stroke-width="2"/>
+    <line x1="170" y1="110" x2="270" y2="110" stroke="#fff" stroke-width="2"/>
+    <line x1="170" y1="130" x2="270" y2="130" stroke="#fff" stroke-width="2"/>
+    <rect x="300" y="70" width="60" height="40" rx="4" fill="url(#mailGrad)" opacity="0.9"/>
+    <polyline points="300,70 330,90 360,70" fill="none" stroke="#fff" stroke-width="2"/>
+    <line x1="300" y1="70" x2="360" y2="70" stroke="#fff" stroke-width="2"/>
+    <path d="M110,90 C140,90 180,80 190,90" stroke="#3B82F6" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <defs>
+      <marker id="arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+        <path d="M0,0 L6,3 L0,6 Z" fill="#3B82F6"/>
+      </marker>
+    </defs>
   </svg>
 ---
 
