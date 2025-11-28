@@ -15,6 +15,22 @@
       "summary": "Özet bulunamadı",
       "image": "Resim bulunamadı",
       "file": "to_do_readme.md"
+    },
+    {
+      "title": "Report & Send Mail",
+      "category": "Proje",
+      "date": "28.11.2024",
+      "summary": "Veritabanındaki istediğimiz koşullarda ayarlanan zaman ve kişilere istenilen formatta hafızadan direkt mail gönderen bir raporlama aracıdır.",
+      "image": "<svg width=\"400\" height=\"200\" viewBox=\"0 0 400 200\" xmlns=\"http://www.w3.org/2000/svg\">\n  <!-- Background gradient -->\n  <defs>\n    <linearGradient id=\"bgGrad\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0%\" stop-color=\"#D0E7FF\"/>\n      <stop offset=\"100%\" stop-color=\"#A0C4FF\"/>\n    </linearGradient>\n    <linearGradient id=\"dbGrad\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0%\" stop-color=\"#3B82F6\"/>\n      <stop offset=\"100%\" stop-color=\"#60A5FA\"/>\n    </linearGradient>\n    <linearGradient id=\"sheetGrad\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0%\" stop-color=\"#FACC15\"/>\n      <stop offset=\"100%\" stop-color=\"#FBBF24\"/>\n    </linearGradient>\n    <linearGradient id=\"mailGrad\" x1=\"0\" y1=\"0\" x2=\"0\" y2=\"1\">\n      <stop offset=\"0%\" stop-color=\"#10B981\"/>\n      <stop offset=\"100%\" stop-color=\"#34D399\"/>\n    </linearGradient>\n  </defs>\n  <ellipse cx=\"70\" cy=\"60\" rx=\"40\" ry=\"15\" fill=\"url(#dbGrad)\" opacity=\"0.9\"/>\n  <rect x=\"30\" y=\"60\" width=\"80\" height=\"60\" fill=\"url(#dbGrad)\" opacity=\"0.3\"/>\n  <ellipse cx=\"70\" cy=\"120\" rx=\"40\" ry=\"15\" fill=\"url(#dbGrad)\" opacity=\"0.9\"/>\n  <rect x=\"160\" y=\"50\" width=\"120\" height=\"100\" rx=\"6\" fill=\"url(#sheetGrad)\" opacity=\"0.9\"/>\n  <line x1=\"170\" y1=\"70\" x2=\"270\" y2=\"70\" stroke=\"#fff\" stroke-width=\"2\"/>\n  <line x1=\"170\" y1=\"90\" x2=\"270\" y2=\"90\" stroke=\"#fff\" stroke-width=\"2\"/>\n  <line x1=\"170\" y1=\"110\" x2=\"270\" y2=\"110\" stroke=\"#fff\" stroke-width=\"2\"/>\n  <line x1=\"170\" y1=\"130\" x2=\"270\" y2=\"130\" stroke=\"#fff\" stroke-width=\"2\"/>\n  <rect x=\"300\" y=\"70\" width=\"60\" height=\"40\" rx=\"4\" fill=\"url(#mailGrad)\" opacity=\"0.9\"/>\n  <polyline points=\"300,70 330,90 360,70\" fill=\"none\" stroke=\"#fff\" stroke-width=\"2\"/>\n  <line x1=\"300\" y1=\"70\" x2=\"360\" y2=\"70\" stroke=\"#fff\" stroke-width=\"2\"/>\n  <path d=\"M110,90 C140,90 180,80 190,90\" stroke=\"#3B82F6\" stroke-width=\"2\" fill=\"none\" marker-end=\"url(#arrow)\"/>\n  <defs>\n    <marker id=\"arrow\" markerWidth=\"6\" markerHeight=\"6\" refX=\"5\" refY=\"3\" orient=\"auto\">\n      <path d=\"M0,0 L6,3 L0,6 Z\" fill=\"#3B82F6\"/>\n    </marker>\n  </defs>\n</svg>\n",
+      "file": "Report & Send Mail.md"
+    },
+    {
+      "title": "To Do Project",
+      "category": "Proje",
+      "date": "28.11.2024",
+      "summary": "Tkinter ile yaptığım Todo uygulaması",
+      "image": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"800px\" height=\"800px\" viewBox=\"0 0 1024 1024\" class=\"icon\" version=\"1.1\"><path d=\"M379.733333 386.133333l-157.866666 155.733334-89.6-87.466667L85.333333 501.333333l136.533334 136.533334 204.8-204.8zM379.733333 108.8l-157.866666 155.733333-89.6-87.466666L85.333333 224l136.533334 136.533333L426.666667 155.733333zM379.733333 663.466667l-157.866666 155.733333-89.6-87.466667L85.333333 778.666667l136.533334 136.533333 204.8-204.8z\" fill=\"#3F51B5\"/><path d=\"M512 469.333333h426.666667v85.333334H512zM512 192h426.666667v85.333333H512zM512 746.666667h426.666667v85.333333H512z\" fill=\"#90CAF9\"/></svg>\n",
+      "file": "to_do_readme.md"
     }
   ]
 }
