@@ -12,7 +12,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-        
+
       - name: Install dependencies
         run: |
           sudo apt-get install -y nodejs
@@ -23,11 +23,15 @@ jobs:
         run: |
           node ./scripts/updateJson.js
 
+      - name: Checkout Github-io-patch branch
+        run: |
+          git fetch origin  # Uzak repo değişikliklerini al
+          git checkout Github-io-patch  # Mevcut branch'e geçiş
+
       - name: Commit changes and push to Github-io-patch branch
         run: |
           git config --global user.name "GitHub Actions"
           git config --global user.email "actions@github.com"
-          git checkout -b Github-io-patch  # Github-io-patch branch'ine geçiş yap
           git add postdb.json
           git commit -m "Update postdb.json"
           git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:Github-io-patch
