@@ -1,603 +1,681 @@
 <!DOCTYPE html>
 <html lang="tr">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
-    rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-    rel="stylesheet" />
-  <title>Kişisel Portföy</title>
-  <style>
-    * {
-      padding: 0;
-      margin: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #f5f5f7;
-      font-family: Manrope, sans-serif;
-      display: flex;
-      justify-content: center;
-      --text-color: rgb(51 51 51);
-      --line-color: rgba(233 236 239);
-      --text-secondary: #6b7280;
-      --btn-hover: #e1e3e6;
-      --content-bg: #ffffff;
-      --bg-color: #f5f5f7;
-      --btn-color: rgba(229 231 235 / 0.6);
-      --primary: rgb(25 93 230);
-      --shadow-normal: 0 2px 6px rgba(0, 0, 0, 0.06);
-      --shadow-hover:
-        0 6px 16px rgba(0, 0, 0, 0.10),
-        0 12px 24px rgba(0, 0, 0, 0.06);
-      transition: all 0.3s ease !important;
-    }
-
-    body.dark {
-      background-color: #131827;
-      --text-color: rgb(229 231 235);
-      --line-color: var(--text-secondary);
-      --btn-hover: #2b2f3d;
-      --content-bg: #212937;
-      --bg-color: #131827;
-      --shadow-normal: 0 2px 6px rgba(0, 0, 0, 0.45);
-      --shadow-hover:
-        0 6px 18px rgba(0, 0, 0, 0.55),
-        0 12px 30px rgba(0, 0, 0, 0.40);
-    }
-
-    .outer {
-      position: relative;
-      overflow-x: hidden;
-      width: 100vw;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-      background-color: var(--bg-color);
-    }
-
-    .content {
-      display: flex;
-      flex-grow: 1;
-      flex-direction: column;
-      height: 100%;
-      position: relative;
-      align-items: center;
-    }
-
-    /* #region Header */
-    .header {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      top: 0;
-      height: 75px;
-      width: 100vw;
-      background-color: var(--bg-color);
-      border-bottom: 1px solid var(--line-color);
-    }
-
-    .header-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      height: 100%;
-      justify-content: space-between;
-      max-width: 1100px;
-      width: 1100px;
-    }
-
-    .header-text {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      color: var(--text-color);
-      font-weight: 700;
-      font-size: 1.2rem;
-      gap: 0.5rem;
-    }
-
-    .header-text span:first-child {
-      color: var(--primary);
-      font-size: 2rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--text-secondary);
-      font-weight: 500;
-      font-size: 0.95rem;
-    }
-
-    .nav-links a.active {
-      color: var(--primary);
-      font-weight: 700;
-    }
-
-    #themeButton {
-      width: 3rem;
-      height: 3rem;
-      border: 0;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-    }
-
-    #themeButton:hover {
-      background-color: var(--btn-hover);
-      border-radius: 50%;
-    }
-
-    /* #endregion Header */
-
-    /* #region Finder */
-    .finder {
-      margin-top: 120px;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 1100px;
-      width: 1100px;
-      height: 170px;
-      width: 100vw;
-      background-color: var(--bg-color);
-    }
-
-    .finder-content {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      height: 100%;
-      max-width: 1100px;
-      width: 1100px;
-    }
-
-    .finder-header {
-      font-size: 3rem;
-      line-height: 5rem;
-      font-weight: 1000;
-      letter-spacing: -0.15rem;
-      color: var(--text-color);
-    }
-
-    .finder-secondText {
-      color: var(--text-secondary);
-      font-size: 1.1rem;
-    }
-
-    .searchBox {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-top: auto;
-      position: relative;
-      width: 100%;
-      gap: 0.5rem;
-    }
-
-    .searchBox .input-group {
-      display: flex;
-      flex-direction: row;
-      flex-grow: 1;
-      position: relative;
-      background-color: var(--btn-color);
-      border-radius: 0.5rem;
-    }
-
-    .searchBox .input-group input[type=text] {
-      border: 0;
-      height: 100%;
-      font-size: 1rem;
-      line-height: 1.5rem;
-      background-color: var(--btn-color);
-      padding-left: 3rem;
-      padding-right: 1rem;
-      padding-top: 0.75rem;
-      padding-bottom: 0.75rem;
-      width: 100%;
-      border-radius: 0.5rem;
-      color: var(--text-color);
-    }
-
-    .searchBox .input-group .input-icon {
-      padding: 0.7rem;
-      position: absolute;
-      font-size: 1.4rem;
-      color: var(--text-secondary);
-    }
-
-    .searchBox .input-group input[type=text]:focus {
-      border-color: var(--primary);
-      outline: 1px solid var(--primary);
-      box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25);
-    }
-
-    .searchBox button {
-      border: 0;
-      background-color: var(--btn-color);
-      color: var(--btn-hover);
-      font-size: 0.9rem;
-      font-weight: 500;
-      padding: 0 1rem;
-      font-family: Manrope, sans-serif;
-      border-radius: 0.5rem;
-      color: var(--text-color);
-    }
-
-    .searchBox button:hover {
-      background-color: var(--btn-hover);
-      cursor: pointer;
-    }
-
-    .searchBox button.active {
-      background-color: var(--primary);
-      color: #ffffff;
-    }
-
-    /* #endregion Finder */
-
-    /* #region BlogCard */
-    .blog {
-      margin-top: 2.5rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      max-width: 1100px;
-      width: 1100px;
-      height: auto;
-      width: 100vw;
-      background-color: var(--bg-color);
-    }
-
-    .blog-content {
-      display: flex;
-      flex-direction: row;
-      max-width: 1100px;
-      width: 1100px;
-      gap: 2rem;
-      flex-wrap: wrap;
-      min-height: 766px;
-    }
-
-    .blog-card {
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      padding: 1rem;
-      min-width: 345px;
-      max-width: 345px;
-      justify-content: space-between;
-      height: 367px;
-      background-color: var(--content-bg);
-      border-radius: 0.5rem;
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
-      box-shadow: var(--shadow-normal);
-    }
-
-    .blog-card:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-hover);
-      cursor: pointer;
-    }
-
-    .card-image {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%;
-      height: 167px;
-      background-color: var(--btn-color);
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      border-radius: 0.4rem;
-    }
-
-    .card-category {
-      color: var(--primary);
-      font-size: 0.85rem;
-      font-weight: 500;
-    }
-
-    .card-header {
-      color: var(--text-color);
-      font-size: 1.25rem;
-      font-weight: 700;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-    .card-description {
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 3;
-      line-clamp: 3;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      line-height: 1.1rem;
-      text-align: justify;
-      min-width: 0;
-    }
-
-    .card-date {
-      color: var(--text-secondary);
-      font-size: 0.75rem;
-      text-align: end;
-    }
-
-    /* #endregion BlogCard */
-
-    /* #region Pagination */
-    .pagination {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 75px;
-      width: 100vw;
-      background-color: var(--bg-color);
-      margin-top: 2rem;
-      margin-bottom: 2rem;
-    }
-
-    .pagination-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      height: 100%;
-      justify-content: center;
-      max-width: 1100px;
-      width: 1100px;
-      gap: 1rem;
-    }
-    .pagination-content button{
-      font-size: 2rem;
-      line-height: 2.5rem;
-      width: 40px;
-      height: 40px;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      text-align: center;
-      font-family: Manrope, sans-serif;
-      border: 0;
-      background-color: var(--content-bg);
-      color: var(--primary);
-      font-weight: 400;
-      border-radius: 0.5rem;
-    }
-    .pagination-content button:hover{
-      background-color: var(--btn-hover);
-      cursor: pointer;
-    }
-    .current-page{
-      background-color: var(--primary);
-      padding: 0.5rem 1rem;
-      color: #ffffff;
-      border-radius: 0.5rem;
-    }
-
-    /* #endregion Pagination */
-    /* #region footer */
-        .footer {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      height: 75px;
-      width: 100vw;
-      background-color: var(--bg-color);
-      border-top: 1px solid var(--line-color);
-    }
-
-    .footer-content {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      height: 100%;
-      max-width: 1100px;
-      width: 1100px;
-    }
-    .footer-copyright{
-      color: var(--text-secondary);
-      font-size: 0.9rem;
-      font-family: Manrope, sans-serif;
-    }
-    .footer-links{
-      margin-left: auto;
-      display: flex;
-      gap: 0.5rem;
-    }
-    .footer-links a{
-      text-decoration: none;
-      color: var(--text-secondary);
-    }
-    .footer-links a:hover{
-      color: var(--primary);
-    }
-    /* #endregion footer */
-  </style>
-</head>
-
-<body class="">
-  <div class="outer">
-    <div class="content">
-      <div class="header">
-        <div class="header-content">
-          <div class="header-text">
-            <span class="material-symbols-outlined"> local_library </span>
-            <span>Kişisel Portföy</span>
-          </div>
-          <div class="nav-links">
-            <a href="index.html">Ana Sayfa</a>
-            <a href="#" class="active">Blog & Deneyimler</a>
-            <a href="aboutMe.html">Hakkımda</a>
-          </div>
-          <button id="themeButton" onclick="ToggleTheme()">
-            <span id="themeIcon" class="material-symbols-outlined">dark_mode</span>
-          </button>
-        </div>
-      </div>
-      <div class="finder">
-        <div class="finder-content"><span class="finder-header">Blog & Deneyimler</span>
-          <span class="finder-secondText">Teknoloji, tasarım ve kişisel gelişim üzerine notlarım.</span>
-          <div class="searchBox">
-            <div class="input-group">
-              <span class="material-symbols-outlined input-icon">search</span>
-              <input type="text" id="searchTerm">
-            </div>
-            <button class="active">Tümü</button>
-            <button>Deneyim</button>
-            <button>Proje</button>
-            <button>Kişisel</button>
-          </div>
-        </div>
-
-      </div>
-      <div class="blog">
-        <div class="blog-content" id="blogs">
-          <div class="blog-card">
-            <div class="card-image"></div>
-            <div class="card-category">Teknoloji</div>
-            <div class="card-header">Kart Başlığı Kart Başlığı Kart Başlığı</div>
-            <div class="card-description">kart açıklaması kart açıklaması kart açıklaması kart açıklaması kart kart
-              açıklaması kart açıklaması kart açıklaması kart açıklaması kart açıklaması kart açıklaması</div>
-            <div class="card-date">27 Kasım 2025</div>
-          </div>
-
-        </div>
-      </div>
-      <div class="pagination">
-        <div class="pagination-content">
-          <button><</button>
-          <span class="current-page"> <span>1</span><span> / </span><span id="pageCount"></span></span>
-          <button>></button>
-        </div>
-      </div>
-      <div class="footer"><div class="footer-content">
-        <span class="footer-copyright">© 2025 Bora Yılmaz. Tüm hakları saklıdır.</span>
-        <span class="footer-links">
-          <a href="https://github.com/BoraYlmz" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/BoraYlmz" target="_blank">LinkedIn</a>
-        <a href="https://www.instagram.com/bora._.ylmz" target="_blank">Instagram</a>
-      </span>
-        
-      </div></div>
-    </div>
-
-  </div>
-  <script>
-    function ToggleTheme() {
-      const body = document.body;
-      const icon = document.getElementById("themeIcon");
-
-      body.classList.toggle("dark");
-
-      if (body.classList.contains("dark")) {
-        icon.textContent = "light_mode";
-      } else {
-        icon.textContent = "dark_mode";
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+      rel="stylesheet"
+    />
+    <title>Kişisel Portföy</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
       }
-    }
-    document.addEventListener('DOMContentLoaded', function () {
-            const apiUrl = 'https://api.github.com/repos/BoraYlmz/boraylmz.github.io/contents/posts';
 
-            fetch(apiUrl)
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('GitHub API yanıtı başarısız: ' + response.status);
-                    }
-                    return response.json();
-                })
-                .then(files => {
-                    const mdFiles = files.filter(file => file.name.endsWith('.md'));
-                    const pageCount= Math.ceil(mdFiles.length / 6);
-                    document.getElementById("pageCount").innerHTML= pageCount;
-                    let blogs = document.getElementById('blogs');
-                    blogs.innerHTML = '';
-                    mdFiles.forEach(file => {
-                        fetch(file.download_url)
-                            .then(response => {
-                                if (!response.ok) {
-                                    throw new Error('Markdown dosyası alınamadı: ' + response.status);
-                                }
-                                return response.text();
-                            })
-                            .then(mdContent => {
-                                const yamlRegex = /---\s*([\s\S]*?)\s*---/;
-                                const match = mdContent.match(yamlRegex);
-                                if (match) {
-                                    const yamlContent = match[1].trim();
-                                    const titleRegex = /Başlık:\s*"([^"]+)"/;
-                                    const categoryRegex = /Kategori:\s*"([^"]+)"/;
-                                    const summaryRegex = /Özet:\s*"([^"]+)"/;
-                                    const dateRegex = /YazımTarihi:\s*"([^"]+)"/;
-                                    const ImageRegex = /Resim:\s*\|([\s\S]*?)(?:\n\S|$)/;
+      body {
+        background-color: #f5f5f7;
+        font-family: Manrope, sans-serif;
+        display: flex;
+        justify-content: center;
+        --text-color: rgb(51 51 51);
+        --line-color: rgba(233 236 239);
+        --text-secondary: #6b7280;
+        --btn-hover: #e1e3e6;
+        --content-bg: #ffffff;
+        --bg-color: #f5f5f7;
+        --btn-color: rgba(229 231 235 / 0.6);
+        --primary: rgb(25 93 230);
+        --shadow-normal: 0 2px 6px rgba(0, 0, 0, 0.06);
+        --shadow-hover: 0 6px 16px rgba(0, 0, 0, 0.1),
+          0 12px 24px rgba(0, 0, 0, 0.06);
+        transition: all 0.3s ease !important;
+      }
 
+      body.dark {
+        background-color: #131827;
+        --text-color: rgb(229 231 235);
+        --line-color: var(--text-secondary);
+        --btn-hover: #2b2f3d;
+        --content-bg: #212937;
+        --bg-color: #131827;
+        --shadow-normal: 0 2px 6px rgba(0, 0, 0, 0.45);
+        --shadow-hover: 0 6px 18px rgba(0, 0, 0, 0.55),
+          0 12px 30px rgba(0, 0, 0, 0.4);
+      }
 
-                                    const titleMatch = yamlContent.match(titleRegex);
-                                    const summaryMatch = yamlContent.match(summaryRegex);
-                                    const dateMatch = yamlContent.match(dateRegex);
-                                    const categoryMatch = yamlContent.match(categoryRegex);
-                                    const ImageMatch = yamlContent.match(ImageRegex);
+      .outer {
+        position: relative;
+        overflow-x: hidden;
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        background-color: var(--bg-color);
+      }
 
-                                    const title = titleMatch ? titleMatch[1] : 'Başlık bulunamadı';
-                                    const summary = summaryMatch ? summaryMatch[1] : 'Özet bulunamadı';
-                                    const date = dateMatch ? dateMatch[1] : 'Tarih bulunamadı';
-                                    const category = categoryMatch ? categoryMatch[1] : 'Kategori bulunamadı';
-                                    const image = ImageMatch ? ImageMatch[1].trim() : 'Resim bulunamadı';
-                                    // 
-                                    const post = `
-                                    <div class="blog-card" onclick="window.location.href='blog-post.html'" data-content="${file.name}">
-                                      <div class="card-image" style="background-image:url('data:image/svg+xml;utf8,${encodeURIComponent(image)}');"></div>
-                                      <div class="card-category">${category}</div>
-                                      <div class="card-header">${title}</div>
-                                      <div class="card-description">${summary}</div>
-                                      <div class="card-date">${date}</div>
-                                    </div>`;
+      .content {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        height: 100%;
+        position: relative;
+        align-items: center;
+      }
 
-                                    
-                                    blogs.innerHTML += post;
-                                    
-                                                
-                                } else {
-                                    console.error('YAML front matter bulunamadı');
-                                }
-                            })
-                            .catch(error => {
-                                console.error('Markdown dosyası okunamadı:', error);
-                            });
-                    });
+      /* #region Header */
+      .header {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        top: 0;
+        height: 75px;
+        width: 100vw;
+        background-color: var(--bg-color);
+        border-bottom: 1px solid var(--line-color);
+      }
 
-                    blogs.addEventListener('click', function (event) {
-                        const card = event.target.closest('.blog-card');
-                        if (card) {
-                            const mdContent = card.getAttribute('data-content');
-                            console.log(mdContent)
-                            localStorage.setItem('mdContent', mdContent);
-                        }
-                    });
-                })
-                .catch(error => {
-                    console.error('GitHub API hatası:', error);
-                });
+      .header-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        justify-content: space-between;
+        max-width: 1100px;
+        width: 1100px;
+      }
+
+      .header-text {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        color: var(--text-color);
+        font-weight: 700;
+        font-size: 1.2rem;
+        gap: 0.5rem;
+      }
+
+      .header-text span:first-child {
+        color: var(--primary);
+        font-size: 2rem;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 0.95rem;
+      }
+
+      .nav-links a.active {
+        color: var(--primary);
+        font-weight: 700;
+      }
+
+      #themeButton {
+        width: 3rem;
+        height: 3rem;
+        border: 0;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+      }
+
+      #themeButton:hover {
+        background-color: var(--btn-hover);
+        border-radius: 50%;
+      }
+
+      /* #endregion Header */
+
+      /* #region Finder */
+      .finder {
+        margin-top: 120px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1100px;
+        width: 1100px;
+        height: 170px;
+        width: 100vw;
+        background-color: var(--bg-color);
+      }
+
+      .finder-content {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        height: 100%;
+        max-width: 1100px;
+        width: 1100px;
+      }
+
+      .finder-header {
+        font-size: 3rem;
+        line-height: 5rem;
+        font-weight: 1000;
+        letter-spacing: -0.15rem;
+        color: var(--text-color);
+      }
+
+      .finder-secondText {
+        color: var(--text-secondary);
+        font-size: 1.1rem;
+      }
+
+      .searchBox {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-top: auto;
+        position: relative;
+        width: 100%;
+        gap: 0.5rem;
+      }
+
+      .searchBox .input-group {
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
+        position: relative;
+        background-color: var(--btn-color);
+        border-radius: 0.5rem;
+      }
+
+      .searchBox .input-group input[type="text"] {
+        border: 0;
+        height: 100%;
+        font-size: 1rem;
+        line-height: 1.5rem;
+        background-color: var(--btn-color);
+        padding-left: 3rem;
+        padding-right: 1rem;
+        padding-top: 0.75rem;
+        padding-bottom: 0.75rem;
+        width: 100%;
+        border-radius: 0.5rem;
+        color: var(--text-color);
+      }
+
+      .searchBox .input-group .input-icon {
+        padding: 0.7rem;
+        position: absolute;
+        font-size: 1.4rem;
+        color: var(--text-secondary);
+      }
+
+      .searchBox .input-group input[type="text"]:focus {
+        border-color: var(--primary);
+        outline: 1px solid var(--primary);
+        box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.25);
+      }
+
+      .searchBox button {
+        border: 0;
+        background-color: var(--btn-color);
+        color: var(--btn-hover);
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 0 1rem;
+        font-family: Manrope, sans-serif;
+        border-radius: 0.5rem;
+        color: var(--text-color);
+      }
+
+      .searchBox button:hover {
+        background-color: var(--btn-hover);
+        cursor: pointer;
+      }
+
+      .searchBox button.active {
+        background-color: var(--primary);
+        color: #ffffff;
+      }
+
+      /* #endregion Finder */
+
+      /* #region BlogCard */
+      .blog {
+        margin-top: 2.5rem;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 1100px;
+        width: 1100px;
+        height: auto;
+        width: 100vw;
+        background-color: var(--bg-color);
+      }
+
+      .blog-content {
+        display: flex;
+        flex-direction: row;
+        max-width: 1100px;
+        width: 1100px;
+        gap: 2rem;
+        flex-wrap: wrap;
+        min-height: 766px;
+      }
+
+      .blog-card {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        padding: 1rem;
+        min-width: 345px;
+        max-width: 345px;
+        justify-content: space-between;
+        height: 367px;
+        background-color: var(--content-bg);
+        border-radius: 0.5rem;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+        box-shadow: var(--shadow-normal);
+      }
+
+      .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+        cursor: pointer;
+      }
+
+      .card-image {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 167px;
+        background-color: var(--btn-color);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        border-radius: 0.4rem;
+      }
+
+      .card-category {
+        color: var(--primary);
+        font-size: 0.85rem;
+        font-weight: 500;
+      }
+
+      .card-header {
+        color: var(--text-color);
+        font-size: 1.25rem;
+        font-weight: 700;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .card-description {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 1.1rem;
+        text-align: justify;
+        min-width: 0;
+      }
+
+      .card-date {
+        color: var(--text-secondary);
+        font-size: 0.75rem;
+        text-align: end;
+      }
+
+      /* #endregion BlogCard */
+
+      /* #region Pagination */
+      .pagination {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 75px;
+        width: 100vw;
+        background-color: var(--bg-color);
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .pagination-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        justify-content: center;
+        max-width: 1100px;
+        width: 1100px;
+        gap: 1rem;
+      }
+      .pagination-content button {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-family: Manrope, sans-serif;
+        border: 0;
+        background-color: var(--content-bg);
+        color: var(--primary);
+        font-weight: 400;
+        border-radius: 0.5rem;
+      }
+      .pagination-content button:hover {
+        background-color: var(--btn-hover);
+        cursor: pointer;
+      }
+      .current-page {
+        background-color: var(--primary);
+        padding: 0.5rem 1rem;
+        color: #ffffff;
+        border-radius: 0.5rem;
+      }
+
+      /* #endregion Pagination */
+      /* #region footer */
+      .footer {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: 75px;
+        width: 100vw;
+        background-color: var(--bg-color);
+        border-top: 1px solid var(--line-color);
+      }
+
+      .footer-content {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        height: 100%;
+        max-width: 1100px;
+        width: 1100px;
+      }
+      .footer-copyright {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        font-family: Manrope, sans-serif;
+      }
+      .footer-links {
+        margin-left: auto;
+        display: flex;
+        gap: 0.5rem;
+      }
+      .footer-links a {
+        text-decoration: none;
+        color: var(--text-secondary);
+      }
+      .footer-links a:hover {
+        color: var(--primary);
+      }
+      /* #endregion footer */
+    </style>
+  </head>
+
+  <body class="">
+    <div class="outer">
+      <div class="content">
+        <div class="header">
+          <div class="header-content">
+            <div class="header-text">
+              <span class="material-symbols-outlined"> local_library </span>
+              <span>Kişisel Portföy</span>
+            </div>
+            <div class="nav-links">
+              <a href="index.html">Ana Sayfa</a>
+              <a href="#" class="active">Blog & Deneyimler</a>
+              <a href="aboutMe.html">Hakkımda</a>
+            </div>
+            <button id="themeButton" onclick="ToggleTheme()">
+              <span id="themeIcon" class="material-symbols-outlined"
+                >dark_mode</span
+              >
+            </button>
+          </div>
+        </div>
+        <div class="finder">
+          <div class="finder-content">
+            <span class="finder-header">Blog & Deneyimler</span>
+            <span class="finder-secondText"
+              >Teknoloji, tasarım ve kişisel gelişim üzerine notlarım.</span
+            >
+            <div class="searchBox">
+              <div class="input-group">
+                <span class="material-symbols-outlined input-icon">search</span>
+                <input type="text" id="searchInput" />
+              </div>
+              <button
+                class="filter-category active"
+                id="filterCategoryAll"
+                data-category=""
+              >
+                Tümü
+              </button>
+              <button
+                class="filter-category"
+                id="filterCategory1"
+                data-category="Deneyim"
+              >
+                Deneyim
+              </button>
+              <button
+                class="filter-category"
+                id="filterCategory2"
+                data-category="Proje"
+              >
+                Proje
+              </button>
+              <button
+                class="filter-category"
+                id="filterCategory3"
+                data-category="Kişisel"
+              >
+                Kişisel
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="blog">
+          <div class="blog-content" id="blogs">
+            <div class="blog-card">
+              <div class="card-image"></div>
+              <div class="card-category">Teknoloji</div>
+              <div class="card-header">
+                Kart Başlığı Kart Başlığı Kart Başlığı
+              </div>
+              <div class="card-description">
+                kart açıklaması kart açıklaması kart açıklaması kart açıklaması
+                kart kart açıklaması kart açıklaması kart açıklaması kart
+                açıklaması kart açıklaması kart açıklaması
+              </div>
+              <div class="card-date">27 Kasım 2025</div>
+            </div>
+          </div>
+        </div>
+        <div class="pagination">
+          <div class="pagination-content">
+            <button><</button>
+            <span class="current-page">
+              <span>1</span><span> / </span><span id="pageCount"></span
+            ></span>
+            <button>></button>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="footer-content">
+            <span class="footer-copyright"
+              >© 2025 Bora Yılmaz. Tüm hakları saklıdır.</span
+            >
+            <span class="footer-links">
+              <a href="https://github.com/BoraYlmz" target="_blank">GitHub</a>
+              <a href="https://www.linkedin.com/in/BoraYlmz" target="_blank"
+                >LinkedIn</a
+              >
+              <a href="https://www.instagram.com/bora._.ylmz" target="_blank"
+                >Instagram</a
+              >
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function ToggleTheme() {
+        const body = document.body;
+        const icon = document.getElementById("themeIcon");
+
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+          icon.textContent = "light_mode";
+        } else {
+          icon.textContent = "dark_mode";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const apiUrl =
+          "https://api.github.com/repos/BoraYlmz/boraylmz.github.io/contents/postdb.json";
+
+        fetch(apiUrl)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error(
+                "GitHub API yanıtı başarısız: " + response.status
+              );
+            }
+            return response.json();
+          })
+          .then((data) => {
+            const postDbUrl = data.download_url;
+            return fetch(postDbUrl).then((response) => response.json());
+          })
+          .then((data) => {
+            const posts = data.posts;
+            const pageCount = Math.ceil(posts.length / 6);
+            document.getElementById("pageCount").innerHTML = pageCount;
+            renderPosts(posts);
+            const categoryButtons =
+              document.querySelectorAll(".filter-category"); // Butonları seçiyoruz
+            categoryButtons.forEach((button) => {
+              button.addEventListener("click", function () {
+                categoryButtons.forEach((btn) =>
+                  btn.classList.remove("active")
+                );
+                button.classList.add("active");
+
+                const categoryFilter = button.dataset.category.toLowerCase();
+                const searchTerm = document
+                  .getElementById("searchInput")
+                  .value.toLowerCase();
+                filterPosts(posts, categoryFilter, searchTerm);
+              });
+            });
+            document
+              .getElementById("searchInput")
+              .addEventListener("input", function () {
+                const searchTerm = this.value.toLowerCase();
+                const activeCategoryButton = document.querySelector(
+                  ".filter-category.active"
+                );
+                let categoryFilter = "";
+
+                if (activeCategoryButton) {
+                  categoryFilter =
+                    activeCategoryButton.dataset.category.toLowerCase();
+                }
+
+                filterPosts(posts, categoryFilter, searchTerm);
+              });
+          })
+          .catch((error) => {
+            console.error("GitHub API hatası:", error);
+          });
+      });
+      function filterPosts(posts, categoryFilter = "", searchTerm = "") {
+        const filteredByCategory = posts.filter((post) => {
+          if (categoryFilter) {
+            return categoryFilter === post.category.toLowerCase();
+          } else {
+            return true;
+          }
         });
-  </script>
-</body>
+        const filteredByTerm = filteredByCategory.filter((post) => {
+          if (searchTerm) {
+            return (
+              post.title.toLowerCase().includes(searchTerm) ||
+              post.summary.toLowerCase().includes(searchTerm) ||
+              post.category.toLowerCase().includes(searchTerm)
+            );
+          }
+          return true;
+        });
+        renderPosts(filteredByTerm);
+      }
 
+      function renderPosts(posts) {
+        let blogs = document.getElementById("blogs");
+        blogs.innerHTML = "";
+
+        posts.forEach((post) => {
+          const title = post.title || "Başlık bulunamadı";
+          const summary = post.summary || "Özet bulunamadı";
+          const date = post.date || "Tarih bulunamadı";
+          const category = post.category || "Kategori bulunamadı";
+          const image = post.image || "Resim bulunamadı";
+
+          const blogPost = `
+                <div class="blog-card" onclick="window.location.href='blog-post.html'" data-content="${
+                  post.file
+                }">
+                    <div class="card-image" style="background-image:url('data:image/svg+xml;utf8,${encodeURIComponent(
+                      image
+                    )}');"></div>
+                    <div class="card-category">${category}</div>
+                    <div class="card-header">${title}</div>
+                    <div class="card-description">${summary}</div>
+                    <div class="card-date">${date}</div>
+                </div>
+            `;
+
+          blogs.innerHTML += blogPost;
+        });
+
+        setupCardClickEvent();
+      }
+
+      function setupCardClickEvent() {
+        const blogs = document.getElementById("blogs");
+        blogs.addEventListener("click", function (event) {
+          const card = event.target.closest(".blog-card");
+          if (card) {
+            const mdContent = card.getAttribute("data-content");
+            localStorage.setItem("mdContent", mdContent);
+          }
+        });
+      }
+    </script>
+  </body>
 </html>
