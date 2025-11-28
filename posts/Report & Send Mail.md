@@ -3,7 +3,6 @@ title: "Report & Send Mail"
 category: "Proje"
 summary: "Veritabanındaki istediğimiz koşullarda ayarlanan zaman ve kişilere istenilen formatta hafızadan direkt mail gönderen bir raporlama aracıdır."
 date: "28.11.2024"
-file: "Report & Send Mail.md"
 image: |
   <svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
     <!-- Background gradient -->
