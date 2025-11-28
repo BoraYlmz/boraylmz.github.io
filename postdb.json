@@ -1,22 +1,6 @@
 {
   "posts": [
     {
-      "title": "Başlık bulunamadı",
-      "category": "Kategori bulunamadı",
-      "date": "Tarih bulunamadı",
-      "summary": "Özet bulunamadı",
-      "image": "Resim bulunamadı",
-      "file": "Report & Send Mail.md"
-    },
-    {
-      "title": "Başlık bulunamadı",
-      "category": "Kategori bulunamadı",
-      "date": "Tarih bulunamadı",
-      "summary": "Özet bulunamadı",
-      "image": "Resim bulunamadı",
-      "file": "to_do_readme.md"
-    },
-    {
       "title": "Report & Send Mail",
       "category": "Proje",
       "date": "28.11.2024",
