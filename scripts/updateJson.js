@@ -23,14 +23,17 @@ fs.readdirSync(postsDirectory).forEach(file => {
     const content = fs.readFileSync(filePath, 'utf-8');
     const { data } = matter(content);
 
-    postData.posts.push({
-      title: data.title || 'Başlık bulunamadı',
-      category: data.category || 'Kategori bulunamadı',
-      date: data.date || 'Tarih bulunamadı',
-      summary: data.summary || 'Özet bulunamadı',
-      image: data.image || 'Resim bulunamadı',
-      file: file
-    });
+    const isPostAlreadyAdded = postData.posts.some(post => post.file === file);
+
+    if (!isPostAlreadyAdded) {
+      postData.posts.push({
+        title: data.title || 'Başlık bulunamadı',
+        category: data.category || 'Kategori bulunamadı',
+        date: data.date || 'Tarih bulunamadı',
+        summary: data.summary || 'Özet bulunamadı',
+        image: data.image || 'Resim bulunamadı',
+        file: file
+      });
   }
 });
 
