@@ -110,6 +110,7 @@ Birden fazla kullanıcıya aynı anda görev atama özelliği planlanmaktadır.
 <div class="lang-block" data-lang="en">
   
 # <span>To-Do Application Project</span>
+---
 <div class="github-link">
     <div>
         <strong>GitHub Repository</strong><br>
