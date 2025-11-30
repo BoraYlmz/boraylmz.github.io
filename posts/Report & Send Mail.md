@@ -47,7 +47,7 @@ image: |
 <div class="lang-block" data-lang="tr">
 
 # <span>Report & Send Mail</span>
-
+---
 <div class="github-link">
     <div>
         <strong>GitHub Repository</strong><br>
@@ -87,7 +87,7 @@ Filtreli veriler şablona yerleştirilir ve hedef kişilere e-posta ile gönderi
 <div class="lang-block" data-lang="en">
 
 # <span>Report & Send Mail</span>
-
+---
 <div class="github-link">
     <div>
         <strong>GitHub Repository</strong><br>
