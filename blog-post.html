@@ -30,9 +30,10 @@
             --primary: rgb(25 93 230);
             transition: all 0.3s ease !important;
             --popup-text-color: var(--text-color);
-            
+
         }
-        body p{
+
+        body p {
             text-align: justify;
         }
 
@@ -150,7 +151,8 @@
             width: 100vw;
             background-color: var(--bg-color);
         }
-        .blog h1{
+
+        .blog h1 {
             margin-right: 50px;
         }
 
@@ -192,13 +194,39 @@
             border: none;
 
         }
-        ul{
+
+        ul {
             margin-left: 3rem;
             margin-top: 1rem;
             margin-bottom: 1rem;
         }
-        h2{
+
+        h2 {
             margin: 1.5rem 0;
+        }
+
+        .github-link {
+            border: 1px solid #ddd;
+            padding: 16px;
+            border-radius: 12px;
+            background: #fafafa;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .github-link span:first-child {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .github-link a {
+            padding: 8px 14px;
+            background: #24292e;
+            color: white;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         /* #endregion Blog */
@@ -245,6 +273,7 @@
         .footer-links a:hover {
             color: var(--primary);
         }
+
         code {
             background: var(--bg);
             padding: 0.2rem 0.4rem;
@@ -252,7 +281,7 @@
             font-family: Consolas, "Courier New", monospace;
             font-size: 0.95rem;
             color: #d6336c;
-            }
+        }
 
         /* #endregion Footer */
         .langSelector {
@@ -298,6 +327,7 @@
         .lang-block.active {
             display: block;
         }
+
 
         @media (max-width: 600px) {
             .blog-content {
