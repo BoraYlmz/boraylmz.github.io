@@ -12,7 +12,7 @@ image: |
 # <span>To-Do Uygulaması Projesi</span>
 ---
 <div class="warning-msg">
-  <strong >⚠ Proje Durumu:</strong> 
+  <strong >⚠ Proje Durumu:</strong> Bu proje durdurulmuş olup bazı bölümler eksik veya tamamlanmamıştır.
 </div>
 
 Bu proje, yaklaşık 15–30 dakikalık boş zamanları değerlendirmek amacıyla geliştirdiğim ilk **Tkinter tabanlı arayüz projesidir**. Temel amaç, iş ortamımızda kullandığımız farklı uygulamaları tek bir platformda bir araya getirme fikrinin nasıl bir deneyim sunacağını test etmektir. Bu uygulama, planlanan büyük yapının ilk modülünü oluşturmaktadır.
