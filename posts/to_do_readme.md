@@ -1,103 +1,210 @@
 ---
 title: "To Do Project"
 category: "Proje"
-summary: "Tkinter ile yaptığım Todo uygulaması"
+summary: "Tkinter ile geliştirilmiş görev yönetim uygulaması"
 date: "28.11.2024"
 image: |
   <svg xmlns="http://www.w3.org/2000/svg" width="800px" height="800px" viewBox="0 0 1024 1024" class="icon" version="1.1"><path d="M379.733333 386.133333l-157.866666 155.733334-89.6-87.466667L85.333333 501.333333l136.533334 136.533334 204.8-204.8zM379.733333 108.8l-157.866666 155.733333-89.6-87.466666L85.333333 224l136.533334 136.533333L426.666667 155.733333zM379.733333 663.466667l-157.866666 155.733333-89.6-87.466667L85.333333 778.666667l136.533334 136.533333 204.8-204.8z" fill="#3F51B5"/><path d="M512 469.333333h426.666667v85.333334H512zM512 192h426.666667v85.333333H512zM512 746.666667h426.666667v85.333333H512z" fill="#90CAF9"/></svg>
 ---
 
-
-# [To-Do Uygulama Projesi / To-Do Application Project](https://github.com/BoraYlmz/to_do)
-
-<hr>
-
-#### [Türkçe](#turkce)
-#### [English](#english)
-
-<hr>
-
-## Türkçe / Turkish <a name="turkce"></a>
-Bu proje, günlük iş akışlarındaki kısa süreli (yaklaşık 15-30 dakika) boş zamanlarda geliştirdiğim ilk Tkinter tabanlı arayüz projesidir. Projenin başlangıç fikri, mevcut çalışma ortamımızda kullandığımız farklı uygulamaları tek bir platformda birleştirmenin nasıl bir deneyim yaratabileceği ve bu sürecin neler gerektireceği üzerine şekillenmiştir. Bu proje, söz konusu fikrin ilk modülünü oluşturmaktadır.
-
-Bu modül, kullanıcıların görevlerini **"Başlamamış"**, **"İşlemde"** ve **"Bitti"** olmak üzere üç farklı sütunda listeleyebilmelerini sağlar. Her bir görev, detaylı açıklamalar ve eklenebilir yorumlar içermektedir. Modül, mevcut görevlerin durumunu takip etmeyi amaçlayan bir görev atama aracıdır.
-
-## Proje Ekran Görüntüleri:
-<div class="img-container" style="display: flex; justify-content: space-between; gap: 10px;">
-  <img src="https://github.com/user-attachments/assets/51352d6d-e1ec-48df-9dde-5aea06eccf5e" alt="login_panel" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/a558194a-4931-472c-91a1-8cd298c5183b" alt="mail_panel" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/4921feb9-64f2-4f2b-b5ee-c813171d61cd" alt="mail_detail" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/9097d0be-d0f6-4ae1-83de-daeab6089865" alt="new_mail" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/bcf42d10-a19d-43f2-9827-3f3dd9027edb" alt="message_box_example" style="width: 200px;" />
+<div class="lang-block" data-lang="tr">
+  
+# <span>To-Do Uygulaması Projesi</span>
+---
+<div class="github-link">
+    <div>
+        <strong>GitHub Repository</strong><br>
+        <span>Projenin kaynak kodlarına ulaşın</span>
+    </div>
+    <a href="https://github.com/BoraYlmz/to_do" target="_blank">GitHub</a>
+</div>
+<div class="warning-msg">
+  <strong >⚠ Proje Durumu:</strong> Bu proje durdurulmuş olup bazı bölümler eksik veya tamamlanmamıştır.
 </div>
 
-## Eksik Yönler ve Gelecek Geliştirme Fikirleri:
-### **Proje Durumu:**
-Bu proje, planlanan işlevlerin bazıları tamamlanmamış ve yarım kalmış bir projedir. Ancak, mevcut haliyle kullanım için uygundur. Geliştirilecek bazı özellikler aşağıda belirtilmiştir.
-### **Eksiklikler ve Geliştirme Alanları:**
+Bu proje, yaklaşık 15–30 dakikalık boş zamanları değerlendirmek amacıyla geliştirdiğim ilk **Tkinter tabanlı arayüz projesidir**. Temel amaç, iş ortamımızda kullandığımız farklı uygulamaları tek bir platformda bir araya getirme fikrinin nasıl bir deneyim sunacağını test etmektir. Bu uygulama, planlanan büyük yapının ilk modülünü oluşturmaktadır.
 
-1. **Kullanıcı Kayıt Modülü Eksikliği / Missing User Registration Module:**
-   Proje, kullanıcı kaydı modülüne sahip değildir. İki farklı fikir arasında kalınmış ve her iki seçenek de henüz uygulanmamıştır:
-   - Manuel kullanıcı girişi ile tanımlama (yetki verilmemişlerin sisteme girişi engelleme).
-   - Lokal ağda bulunan kullanıcı adı ile otomatik giriş yapma ve loglama işlemi.
+Uygulama, görevlerin üç ana durumda listelenmesini sağlar:
 
-2. **Veritabanı Sorunu:**
-   Proje geliştirilirken, TinyDB kullanılarak lokal bir veritabanı yapılandırılmıştır. Başlangıçta, görev yorumlarının veritabanını gereksiz yere büyütebileceği ve ilerleyen süreçte sorgulama işlemlerini zorlaştırabileceği düşüncesiyle, her görev için ayrı bir JSON dosyasında yorumlar tutulmaya karar verilmiştir. Ancak proje ilerledikçe, bu yaklaşımın gereksiz olduğu anlaşılmıştır. Veritabanı yapısında yapılacak değişiklikle birlikte, bu veri için yeni bir tablo oluşturulmalı ve ilgili kod güncellenmelidir.
+- **Başlamamış**
+- **İşlemde**
+- **Bitti**
 
-3. **Canlı (Live) Mail Güncellemeleri:**
-   Yeni gönderilen veya güncellenen görevler için **canlı güncelleme** özelliği eksiktir. Bunun için yeni bir thread açılacak ve kullanıcıyı ilgilendiren görevler taranarak ekranın otomatik olarak güncellenmesi sağlanacaktır. Bu özellik, kullanıcı bazlı görev güncellemeleri ve yorumların takip edilmesi için önemli olacaktır.
-
-4. **Kullanıcı Ayarları ve Geçiş Modülü:**
-   `usersetting.cfg` dosyası, kullanıcılar arasında geçiş yapmak amacıyla basitçe bırakılmıştır. Gelecekte, kullanıcı bilgilerini baz alarak bir giriş anahtarı üretme işlemi ve şifreli giriş mekanizması eklenmesi planlanmıştır.
-
-5. **Görev Atama Modülü:**
-   Şu anda görevler yalnızca bireysel olarak atanmaktadır. **Çoklu görev atama** özelliği eklenerek birden fazla kişi aynı ve ortak görev ataması yapılabilir.
-
-### **Proje Güncelleme Durumu:**
-Güncellemeler, çeşitli sebeplerden ötürü durdurulmuş olup, modül henüz merkezi bir hub uygulamasına dönüştürülmemiştir. Ancak mevcut haliyle modül işlevsel olup kullanılabilir durumdadır. Bununla birlikte, proje üzerinde gerçekleştirilebilecek geliştirmeler ve giderilmesi gereken eksiklikler yukarıda detaylı bir şekilde sıralanmıştır.
+Her bir görev için detaylı açıklamalar, yorum ekleme alanı ve atama seçenekleri mevcuttur. Bir görev yalnızca **kendisine atanmış kullanıcı tarafından silinebilir**.
 
 ---
 
-## English / İngilizce <a name="english"></a>
+## 📸 Proje Ekran Görüntüleri
 
-<hr>
+### 1️⃣ Giriş Ekranı
+Kullanıcının sisteme giriş yaptığı başlangıç arayüzü.
 
-This project is my first Tkinter-based GUI application developed during short free periods (approximately 15-30 minutes) in my daily workflow. The initial idea behind the project was to combine the various applications used in our work environment into a single platform and explore what this experience would be like, as well as what it would require. This project represents the first module of that idea.
+<img src="https://github.com/user-attachments/assets/51352d6d-e1ec-48df-9dde-5aea06eccf5e" width="250">
 
-This module allows users to list their tasks in three different columns: **"Not Started"**, **"In Progress"**, and **"Completed"**. Each task includes detailed descriptions and the ability to add comments. The module is a task assignment tool designed to track the current status of tasks.
+---
 
-## Project Screenshots:
-<div class="img-container" style="display: flex; justify-content: space-between; gap: 10px;">
-  <img src="https://github.com/user-attachments/assets/51352d6d-e1ec-48df-9dde-5aea06eccf5e" alt="login_panel" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/a558194a-4931-472c-91a1-8cd298c5183b" alt="mail_panel" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/4921feb9-64f2-4f2b-b5ee-c813171d61cd" alt="mail_detail" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/9097d0be-d0f6-4ae1-83de-daeab6089865" alt="new_mail" style="width: 200px;" />
-  <img src="https://github.com/user-attachments/assets/bcf42d10-a19d-43f2-9827-3f3dd9027edb" alt="message_box_example" style="width: 200px;" />
+### 2️⃣ Görev Durumu Paneli  
+Oluşturulan veya size atanan görevlerin durumlarının gösterildiği ana ekran.
+
+<img src="https://github.com/user-attachments/assets/a558194a-4931-472c-91a1-8cd298c5183b" width="250">
+
+---
+
+### 3️⃣ Görev Detayı ve Yorum Paneli  
+Bir göreve tıklandığında açılan bu panelde görev açıklaması ve yorumlar yer alır.
+
+<img src="https://github.com/user-attachments/assets/4921feb9-64f2-4f2b-b5ee-c813171d61cd" width="250">
+
+---
+
+### 4️⃣ Yeni Görev Oluşturma Ekranı  
+Kendinize veya başka bir kullanıcıya görev eklemenizi sağlar.
+
+<img src="https://github.com/user-attachments/assets/9097d0be-d0f6-4ae1-83de-daeab6089865" width="250">
+
+---
+
+### 5️⃣ Silme Onay Penceresi  
+Görev yalnızca **kendisine atanmış kişi tarafından** silinebilir.
+
+<img src="https://github.com/user-attachments/assets/bcf42d10-a19d-43f2-9827-3f3dd9027edb" width="250">
+
+---
+
+## 🧩 Eksik Yönler ve Geliştirme Planları
+
+### 1. **Kullanıcı Kayıt Modülü**
+Henüz uygulanmadı. Düşünülen iki yöntem:
+
+- Manuel kullanıcı ekleme ve yetkilendirme  
+- Ağ kullanıcı adıyla otomatik giriş + loglama
+
+---
+
+### 2. **Veritabanı Düzenlemesi**
+Başlangıçta yorumlar ayrı JSON dosyalarında tutulmuş olsa da, ileride **tek TinyDB tablosunda** toplanması planlanmaktadır.
+
+---
+
+### 3. **Canlı Güncellemeler**
+Yeni görevler ve yorumlar için gerçek zamanlı güncelleme desteği eklenmelidir.
+
+---
+
+### 4. **Kullanıcı Ayarları**
+`usersetting.cfg` geçici bir çözümdür.  
+Gelecekte:
+
+- Kullanıcı anahtarı üretimi  
+- Şifreli giriş  
+
+eklenecektir.
+
+---
+
+### 5. **Toplu Görev Atama**
+Birden fazla kullanıcıya aynı anda görev atama özelliği planlanmaktadır.
+
+
+</div>
+<div class="lang-block" data-lang="en">
+  
+# <span>To-Do Application Project</span>
+<div class="github-link">
+    <div>
+        <strong>GitHub Repository</strong><br>
+        <span>Access the source codes of the project</span>
+    </div>
+    <a href="https://github.com/BoraYlmz/to_do" target="_blank">GitHub</a>
+</div>
+<div class="warning-msg">
+  <strong >⚠ Proje Durumu:</strong> This project has been stopped and some sections are missing or incomplete.
+</div>
+<div class="info-msg">
+  <strong>ℹ Notice:</strong> This English section was generated using AI translation and may include small errors.
 </div>
 
-## Missing Features and Future Development Ideas:
-### **Project Status:**
-This project is incomplete, and some planned features are not yet implemented. However, it is functional and ready for use. The following features are still in development.
+This project is my first **Tkinter-based GUI application**, created during short free periods (approximately 15–30 minutes). The goal was to experiment with unifying multiple tools used in our workplace into a single platform. This application represents the first module of that larger vision.
 
-### **Missing Features and Areas for Development:**
+The module allows users to manage tasks under three states:
 
-1. **Missing User Registration Module:**
-   The project lacks a user registration module. Two options have been considered but not yet implemented:
-   - Manual user login and assignment (restrict access for unauthorized users).
-   - Automatic login and logging via the local network username.
+- **Not Started**
+- **In Progress**
+- **Completed**
 
-2. **Database Issue:**
-   During development, **TinyDB** was used for the local database. Initially, it was decided to store comments for each task in separate JSON files to avoid bloating the database and complicating queries later. However, as the project progressed, it became clear that this approach was unnecessary. A new table should be created in the database, and the code should be updated accordingly.
+Each task includes detailed descriptions, comments, and assignment settings.  
+A task can be **deleted only by the user it was assigned to**.
 
-3. **Live Mail Updates:**
-   The project currently lacks live updates for newly sent or updated tasks. A new thread will be created to scan tasks related to the user, and the interface will be updated automatically. This feature is essential for task-based updates and comment tracking.
+---
 
-4. **User Settings and Transition Module:**
-   The `usersetting.cfg` file is a simple solution for switching between users. Future updates will include a mechanism for generating a login key based on user information and implementing encrypted login.
+## 📸 Project Screenshots
 
-5. **Task Assignment Module:**
-   Currently, tasks are assigned individually. A **bulk task assignment** feature will be added to allow multiple users to be assigned the same task.
+### 1️⃣ Login Screen  
+Initial interface where the user logs in.
 
-### **Project Update Status:**
-Updates have been paused for various reasons, and the module has not yet been transformed into a centralized hub application. However, the module is functional and usable in its current form. The project’s development and areas for improvement are outlined above.
+<img src="https://github.com/user-attachments/assets/51352d6d-e1ec-48df-9dde-5aea06eccf5e" width="250">
 
+---
+
+### 2️⃣ Task Status Panel  
+Displays tasks created by the user or assigned to them.
+
+<img src="https://github.com/user-attachments/assets/a558194a-4931-472c-91a1-8cd298c5183b" width="250">
+
+---
+
+### 3️⃣ Task Details & Comments  
+Shows task information and the comments panel.
+
+<img src="https://github.com/user-attachments/assets/4921feb9-64f2-4f2b-b5ee-c813171d61cd" width="250">
+
+---
+
+### 4️⃣ New Task Creation  
+Allows creating a new task for yourself or another user.
+
+<img src="https://github.com/user-attachments/assets/9097d0be-d0f6-4ae1-83de-daeab6089865" width="250">
+
+---
+
+### 5️⃣ Delete Confirmation  
+Only the owner of a task can delete it.
+
+<img src="https://github.com/user-attachments/assets/bcf42d10-a19d-43f2-9827-3f3dd9027edb" width="250">
+
+---
+
+## 🧩 Missing Features & Future Plans
+
+### 1. **User Registration Module**
+Not yet implemented. Two possible approaches:
+
+- Manual user management  
+- Auto-login via local network credentials  
+
+---
+
+### 2. **Database Structure Improvement**
+Comments were initially stored in separate JSON files. The plan is to migrate them into a **dedicated TinyDB table**.
+
+---
+
+### 3. **Live Updates**
+Real-time updates for new tasks and comments will be added using a background thread.
+
+---
+
+### 4. **User Settings**
+`usersetting.cfg` is temporary.  
+Future plans:
+
+- User-based login key generation  
+- Encrypted login  
+
+---
+
+### 5. **Bulk Task Assignment**
+Will allow assigning a task to multiple users at once.
+</div>
+
+---
