@@ -11,6 +11,13 @@ image: |
   
 # <span>To-Do Uygulaması Projesi</span>
 ---
+<div class="github-link">
+    <div>
+        <strong>GitHub Repository</strong><br>
+        <span>Projenin kaynak kodlarına ulaşın</span>
+    </div>
+    <a href="https://github.com/BoraYlmz/to_do" target="_blank">GitHub</a>
+</div>
 <div class="warning-msg">
   <strong >⚠ Proje Durumu:</strong> Bu proje durdurulmuş olup bazı bölümler eksik veya tamamlanmamıştır.
 </div>
@@ -103,6 +110,13 @@ Birden fazla kullanıcıya aynı anda görev atama özelliği planlanmaktadır.
 <div class="lang-block" data-lang="en">
   
 # <span>To-Do Application Project</span>
+<div class="github-link">
+    <div>
+        <strong>GitHub Repository</strong><br>
+        <span>Access the source codes of the project</span>
+    </div>
+    <a href="https://github.com/BoraYlmz/to_do" target="_blank">GitHub</a>
+</div>
 <div class="warning-msg">
   <strong >⚠ Proje Durumu:</strong> This project has been stopped and some sections are missing or incomplete.
 </div>
